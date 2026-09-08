@@ -8,7 +8,8 @@ from datetime import datetime, timezone
 DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.json")
 LIS_SKINS_FEED = "https://lis-skins.com/market_export_json/csgo.json"
 CBR_RATE_URL = "https://www.cbr-xml-daily.ru/daily_json.js"
-DROP_THRESHOLD = 0.05  # 5%
+DROP_THRESHOLD = 0.05  # 5% below the historical minimum
+LAST_CHECK_THRESHOLD = 0.07  # 7% move (either direction) since the previous check
 MAX_HISTORY_POINTS = 8064  # ~4 weeks at 5-minute intervals
 
 # slug -> exact item name as it appears in the lis-skins JSON feed
@@ -118,15 +119,29 @@ def main():
         history = item_data["history"]
 
         prev_min = min((h["price"] for h in history), default=None)
+        prev_price = history[-1]["price"] if history else None
 
         history.append({"t": now, "price": price})
         trim(history)
 
+        reasons = []
+
         if prev_min is not None and price <= prev_min * (1 - DROP_THRESHOLD):
             drop_pct = (1 - price / prev_min) * 100
+            reasons.append(f"\U0001F4C9 ниже исторического минимума на {drop_pct:.1f}% (было ${prev_min:.2f})")
+
+        if prev_price is not None and prev_price > 0:
+            change_pct = (price - prev_price) / prev_price * 100
+            if change_pct <= -LAST_CHECK_THRESHOLD * 100:
+                reasons.append(f"\U0001F53B резкое падение за одну проверку: {change_pct:.1f}% (было ${prev_price:.2f})")
+            elif change_pct >= LAST_CHECK_THRESHOLD * 100:
+                reasons.append(f"\U0001F53A резкий рост за одну проверку: +{change_pct:.1f}% (было ${prev_price:.2f})")
+
+        if reasons:
             alerts.append(
-                f"\U0001F4C9 <b>{match_name}</b>\n"
-                f"Цена: <b>${price:.2f}</b> (было мин. ${prev_min:.2f}, -{drop_pct:.1f}%)\n"
+                f"<b>{match_name}</b>\n"
+                f"Цена: <b>${price:.2f}</b>\n"
+                + "\n".join(reasons) + "\n"
                 f"{entry.get('url', '')}"
             )
 
@@ -134,7 +149,7 @@ def main():
     save_data(data)
 
     if alerts:
-        message = "\U0001F98B <b>Butterfly Watch: падение цены!</b>\n\n" + "\n\n".join(alerts)
+        message = "\U0001F98B <b>Butterfly Watch: изменение цены!</b>\n\n" + "\n\n".join(alerts)
         send_telegram(message)
         print(f"Sent {len(alerts)} alert(s)")
     else:

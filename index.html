@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Butterfly Watch</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f1115;
+    --card: #171a21;
+    --border: #262b36;
+    --text: #e8eaed;
+    --muted: #8b93a7;
+    --accent: #4f8cff;
+    --green: #35c47a;
+    --red: #ef5a5a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    padding: 24px;
+  }
+  h1 {
+    font-size: 22px;
+    margin: 0 0 4px;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .card h2 {
+    font-size: 14px;
+    margin: 0 0 2px;
+    font-weight: 600;
+  }
+  .card a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 11px;
+  }
+  .card a:hover { color: var(--accent); }
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 8px 0 10px;
+  }
+  .price-now {
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .price-min {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .delta {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 5px;
+  }
+  .delta.up { color: var(--green); background: rgba(53,196,122,0.12); }
+  .delta.down { color: var(--red); background: rgba(239,90,90,0.12); }
+  .delta.flat { color: var(--muted); background: rgba(139,147,167,0.12); }
+  canvas { max-height: 160px; }
+  .footer {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 24px;
+  }
+  .error {
+    color: var(--red);
+    padding: 24px;
+  }
+</style>
+</head>
+<body>
+  <h1>🦋 Butterfly Watch</h1>
+  <div class="subtitle">Отслеживание цен ★ Butterfly Knife на lis-skins.com · обновление каждые 5 минут</div>
+  <div id="content">Загрузка...</div>
+  <div class="footer" id="footer"></div>
+
+<script>
+async function main() {
+  const content = document.getElementById('content');
+  let data;
+  try {
+    const res = await fetch('data.json?_=' + Date.now());
+    data = await res.json();
+  } catch (e) {
+    content.innerHTML = '<div class="error">Не удалось загрузить data.json: ' + e + '</div>';
+    return;
+  }
+
+  content.innerHTML = '';
+  const grid = document.createElement('div');
+  grid.className = 'grid';
+  content.appendChild(grid);
+
+  const rateHistory = (data.usd_rub && data.usd_rub.history) || [];
+  grid.appendChild(makeCard(
+    'USD / RUB',
+    null,
+    rateHistory.map(h => h.t),
+    rateHistory.map(h => h.rate),
+    v => v.toFixed(2) + ' ₽',
+    '#f5a623'
+  ));
+
+  const items = data.items || {};
+  for (const slug of Object.keys(items)) {
+    const item = items[slug];
+    const history = item.history || [];
+    grid.appendChild(makeCard(
+      item.name,
+      item.url,
+      history.map(h => h.t),
+      history.map(h => h.price),
+      v => '$' + v.toFixed(2),
+      '#4f8cff'
+    ));
+  }
+
+  const footer = document.getElementById('footer');
+  if (data.last_updated) {
+    footer.textContent = 'Последнее обновление: ' + new Date(data.last_updated).toLocaleString('ru-RU');
+  }
+}
+
+function makeCard(title, url, labels, values, fmt, color) {
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  const h2 = document.createElement('h2');
+  h2.textContent = title;
+  card.appendChild(h2);
+
+  if (url) {
+    const a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = 'открыть на lis-skins →';
+    card.appendChild(a);
+  }
+
+  const priceRow = document.createElement('div');
+  priceRow.className = 'price-row';
+
+  const current = values.length ? values[values.length - 1] : null;
+  const min = values.length ? Math.min(...values) : null;
+
+  const priceNow = document.createElement('span');
+  priceNow.className = 'price-now';
+  priceNow.textContent = current !== null ? fmt(current) : '—';
+  priceRow.appendChild(priceNow);
+
+  if (current !== null && min !== null && min > 0) {
+    const deltaPct = ((current - min) / min) * 100;
+    const delta = document.createElement('span');
+    delta.className = 'delta ' + (deltaPct > 0.05 ? 'up' : deltaPct < -0.05 ? 'down' : 'flat');
+    delta.textContent = (deltaPct >= 0 ? '+' : '') + deltaPct.toFixed(1) + '% от мин.';
+    priceRow.appendChild(delta);
+  }
+
+  card.appendChild(priceRow);
+
+  if (min !== null) {
+    const minEl = document.createElement('div');
+    minEl.className = 'price-min';
+    minEl.textContent = 'Исторический минимум: ' + fmt(min);
+    card.appendChild(minEl);
+  }
+
+  const canvas = document.createElement('canvas');
+  card.appendChild(canvas);
+
+  new Chart(canvas, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: values,
+        borderColor: color,
+        backgroundColor: color + '22',
+        fill: true,
+        pointRadius: 0,
+        tension: 0.15,
+        borderWidth: 2,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { display: false },
+        y: { display: true, ticks: { color: '#8b93a7', font: { size: 10 } }, grid: { color: '#262b36' } },
+      },
+    },
+  });
+
+  return card;
+}
+
+main();
+</script>
+</body>
+</html>

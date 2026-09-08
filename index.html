@@ -9,10 +9,12 @@
   :root {
     --bg: #0f1115;
     --card: #171a21;
+    --card-hover: #1d212b;
     --border: #262b36;
     --text: #e8eaed;
     --muted: #8b93a7;
     --accent: #4f8cff;
+    --gold: #f5a623;
     --green: #35c47a;
     --red: #ef5a5a;
   }
@@ -24,80 +26,181 @@
     font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     padding: 24px;
   }
-  h1 {
-    font-size: 22px;
-    margin: 0 0 4px;
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+
+  .statusbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
   }
-  .subtitle {
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 12px;
     color: var(--muted);
-    font-size: 13px;
-    margin-bottom: 24px;
   }
+  .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 0 rgba(53,196,122,0.6);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(53,196,122,0.5); }
+    70% { box-shadow: 0 0 0 6px rgba(53,196,122,0); }
+    100% { box-shadow: 0 0 0 0 rgba(53,196,122,0); }
+  }
+  .chip.btn {
+    cursor: pointer;
+    color: var(--text);
+    user-select: none;
+  }
+  .chip.btn:hover { border-color: var(--accent); color: var(--accent); }
+
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
   }
   .card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 16px;
+    padding: 14px;
+    cursor: pointer;
+    transition: border-color .15s, background .15s;
   }
-  .card h2 {
-    font-size: 14px;
-    margin: 0 0 2px;
-    font-weight: 600;
-  }
-  .card a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 11px;
-  }
-  .card a:hover { color: var(--accent); }
-  .price-row {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin: 8px 0 10px;
-  }
-  .price-now {
-    font-size: 22px;
+  .card:hover { background: var(--card-hover); }
+  .card.selected { border-color: var(--accent); }
+
+  .tags { display: flex; gap: 6px; margin-bottom: 6px; }
+  .tag {
+    font-size: 10px;
     font-weight: 700;
-  }
-  .price-min {
-    font-size: 12px;
+    letter-spacing: .03em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(139,147,167,0.15);
     color: var(--muted);
   }
-  .delta {
-    font-size: 12px;
+  .tag.wear { color: var(--accent); background: rgba(79,140,255,0.14); }
+  .tag.stattrak { color: var(--gold); background: rgba(245,166,35,0.14); }
+
+  .card h2 {
+    font-size: 13px;
+    margin: 0 0 8px;
     font-weight: 600;
-    padding: 2px 6px;
+    line-height: 1.3;
+  }
+
+  .price-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .price-now { font-size: 19px; font-weight: 700; }
+  .price-rub { font-size: 11px; color: var(--muted); }
+  .arrow { font-size: 12px; font-weight: 600; }
+  .arrow.dn { color: var(--green); }
+  .arrow.up { color: var(--red); }
+  .arrow.flat { color: var(--muted); }
+
+  .badge {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
     border-radius: 5px;
   }
-  .delta.up { color: var(--green); background: rgba(53,196,122,0.12); }
-  .delta.down { color: var(--red); background: rgba(239,90,90,0.12); }
-  .delta.flat { color: var(--muted); background: rgba(139,147,167,0.12); }
-  canvas { max-height: 160px; }
+  .badge.baseline { color: var(--muted); background: rgba(139,147,167,0.14); }
+  .badge.atmin { color: var(--green); background: rgba(53,196,122,0.14); }
+  .badge.near { color: var(--accent); background: rgba(79,140,255,0.12); }
+  .badge.alert { color: #fff; background: var(--red); }
+
+  .spark { margin-top: 10px; height: 46px; }
+
+  /* Detail panel */
+  .detail {
+    margin-top: 26px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .detail-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+  .detail-head h3 { margin: 0; font-size: 16px; }
+  .detail-head a { color: var(--accent); font-size: 12px; text-decoration: none; white-space: nowrap; }
+  .detail-head a:hover { text-decoration: underline; }
+  .detail-chart { height: 300px; margin: 16px 0; }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .stat { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+  .stat .k { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .stat .v { font-size: 15px; font-weight: 700; }
+
   .footer {
     color: var(--muted);
-    font-size: 12px;
-    margin-top: 24px;
+    font-size: 11px;
+    margin-top: 28px;
+    line-height: 1.6;
   }
-  .error {
-    color: var(--red);
-    padding: 24px;
-  }
+  .footer a { color: var(--muted); }
+  .error { color: var(--red); padding: 24px; }
 </style>
 </head>
 <body>
   <h1>🦋 Butterfly Watch</h1>
-  <div class="subtitle">Отслеживание цен ★ Butterfly Knife на lis-skins.com · обновление каждые 5 минут</div>
+  <div class="subtitle">Отслеживание цен ★ Butterfly Knife на lis-skins.com</div>
+  <div class="statusbar" id="statusbar"></div>
+
   <div id="content">Загрузка...</div>
-  <div class="footer" id="footer"></div>
+
+  <div class="footer">
+    Источник данных: <a href="https://lis-skins.com/market_export_json/csgo.json" target="_blank" rel="noopener noreferrer">market_export_json/csgo.json</a>
+    · курс ЦБ РФ через <a href="https://www.cbr-xml-daily.ru/daily_json.js" target="_blank" rel="noopener noreferrer">cbr-xml-daily.ru</a>
+    · проверка запускается автоматически через GitHub Actions.<br />
+    Курс ЦБ РФ может отличаться от внутреннего курса пересчёта lis-skins — рублёвые цены на этой странице приблизительные.
+  </div>
 
 <script>
-async function main() {
+const DROP_THRESHOLD = 0.05;
+const WEAR_MAP = {
+  "Factory New": "FN",
+  "Minimal Wear": "MW",
+  "Field-Tested": "FT",
+  "Well-Worn": "WW",
+  "Battle-Scarred": "BS",
+};
+
+let ENTRIES = [];
+let SELECTED = null;
+let detailChart = null;
+
+function parseWear(name) {
+  const m = name.match(/\(([^)]+)\)\s*$/);
+  return m ? (WEAR_MAP[m[1]] || m[1]) : null;
+}
+
+function fmtUsd(v) { return '$' + v.toFixed(2); }
+function fmtRub(v) { return Math.round(v).toLocaleString('ru-RU') + ' ₽'; }
+function fmtRate(v) { return v.toFixed(2) + ' ₽'; }
+function fmtDate(t) { return new Date(t).toLocaleString('ru-RU'); }
+
+async function loadAndRender() {
   const content = document.getElementById('content');
   let data;
   try {
@@ -108,119 +211,331 @@ async function main() {
     return;
   }
 
+  const rateHistory = (data.usd_rub && data.usd_rub.history) || [];
+  const latestRate = rateHistory.length ? rateHistory[rateHistory.length - 1].rate : null;
+
+  ENTRIES = [];
+  ENTRIES.push({
+    key: 'usd_rub',
+    isRate: true,
+    name: 'USD / RUB',
+    url: 'https://www.cbr-xml-daily.ru/daily_json.js',
+    history: rateHistory,
+    valueOf: h => h.rate,
+  });
+
+  const items = data.items || {};
+  for (const slug of Object.keys(items)) {
+    const item = items[slug];
+    ENTRIES.push({
+      key: slug,
+      isRate: false,
+      name: item.name,
+      url: item.url,
+      wear: parseWear(item.name),
+      stattrak: item.name.includes('StatTrak'),
+      history: item.history || [],
+      valueOf: h => h.price,
+    });
+  }
+
+  renderStatusBar(data.last_updated, latestRate);
+  renderGrid(latestRate);
+
+  if (!SELECTED || !ENTRIES.some(e => e.key === SELECTED)) {
+    const alerting = ENTRIES.find(e => !e.isRate && computeStatus(e).badge.cls === 'alert');
+    SELECTED = alerting ? alerting.key : (ENTRIES[1] ? ENTRIES[1].key : ENTRIES[0].key);
+  }
+  renderDetail(latestRate);
+}
+
+function renderStatusBar(lastUpdated, latestRate) {
+  const bar = document.getElementById('statusbar');
+  bar.innerHTML = '';
+  const chips = [
+    () => { const c = document.createElement('span'); c.className = 'chip';
+      const dot = document.createElement('span'); dot.className = 'dot';
+      c.appendChild(dot); c.appendChild(document.createTextNode('проверка каждые 5 минут')); return c; },
+    () => mkChip(`порог алерта ≤ −${(DROP_THRESHOLD * 100).toFixed(0)}%`),
+    () => mkChip('обновлено: ' + (lastUpdated ? fmtDate(lastUpdated) : '—')),
+    () => mkChip('курс ЦБ: ' + (latestRate !== null ? fmtRate(latestRate) : '—')),
+  ];
+  chips.forEach(fn => bar.appendChild(fn()));
+
+  const refresh = document.createElement('span');
+  refresh.className = 'chip btn';
+  refresh.textContent = '↻ обновить';
+  refresh.onclick = () => loadAndRender();
+  bar.appendChild(refresh);
+}
+
+function mkChip(text) {
+  const c = document.createElement('span');
+  c.className = 'chip';
+  c.textContent = text;
+  return c;
+}
+
+// prevMin excludes the latest point (mirrors the server's alert check);
+// allMin includes it and drives the "how far from the low" badge text.
+function computeStatus(entry) {
+  const history = entry.history;
+  const values = history.map(entry.valueOf);
+  const current = values.length ? values[values.length - 1] : null;
+  const prev = values.length > 1 ? values[values.length - 2] : null;
+  const prevMin = values.length > 1 ? Math.min(...values.slice(0, -1)) : null;
+  const allMin = values.length ? Math.min(...values) : null;
+  const allMax = values.length ? Math.max(...values) : null;
+
+  let deltaPct = null;
+  if (current !== null && prev !== null && prev !== 0) {
+    deltaPct = (current - prev) / prev * 100;
+  }
+
+  let badge;
+  if (values.length <= 1) {
+    badge = { text: 'точка отсчёта', cls: 'baseline' };
+  } else if (!entry.isRate && prevMin !== null && current <= prevMin * (1 - DROP_THRESHOLD)) {
+    badge = { text: 'ниже порога!', cls: 'alert' };
+  } else if (current !== null && allMin !== null && current <= allMin + 1e-9) {
+    badge = { text: 'на минимуме', cls: 'atmin' };
+  } else {
+    const pct = ((current - allMin) / allMin) * 100;
+    badge = { text: `до мин. +${pct.toFixed(1)}%`, cls: 'near' };
+  }
+
+  return { current, prev, deltaPct, allMin, allMax, prevMin, badge };
+}
+
+function renderGrid(latestRate) {
+  const content = document.getElementById('content');
   content.innerHTML = '';
   const grid = document.createElement('div');
   grid.className = 'grid';
   content.appendChild(grid);
 
-  const rateHistory = (data.usd_rub && data.usd_rub.history) || [];
-  grid.appendChild(makeCard(
-    'USD / RUB',
-    null,
-    rateHistory.map(h => h.t),
-    rateHistory.map(h => h.rate),
-    v => v.toFixed(2) + ' ₽',
-    '#f5a623'
-  ));
-
-  const items = data.items || {};
-  for (const slug of Object.keys(items)) {
-    const item = items[slug];
-    const history = item.history || [];
-    grid.appendChild(makeCard(
-      item.name,
-      item.url,
-      history.map(h => h.t),
-      history.map(h => h.price),
-      v => '$' + v.toFixed(2),
-      '#4f8cff'
-    ));
-  }
-
-  const footer = document.getElementById('footer');
-  if (data.last_updated) {
-    footer.textContent = 'Последнее обновление: ' + new Date(data.last_updated).toLocaleString('ru-RU');
-  }
+  ENTRIES.forEach(entry => grid.appendChild(renderCard(entry, latestRate)));
 }
 
-function makeCard(title, url, labels, values, fmt, color) {
+function renderCard(entry, latestRate) {
+  const st = computeStatus(entry);
   const card = document.createElement('div');
-  card.className = 'card';
+  card.className = 'card' + (entry.key === SELECTED ? ' selected' : '');
+  card.onclick = () => { SELECTED = entry.key; renderGrid(latestRate); renderDetail(latestRate); };
+
+  if (!entry.isRate) {
+    const tags = document.createElement('div');
+    tags.className = 'tags';
+    if (entry.wear) { const t = document.createElement('span'); t.className = 'tag wear'; t.textContent = entry.wear; tags.appendChild(t); }
+    if (entry.stattrak) { const t = document.createElement('span'); t.className = 'tag stattrak'; t.textContent = 'StatTrak™'; tags.appendChild(t); }
+    card.appendChild(tags);
+  }
 
   const h2 = document.createElement('h2');
-  h2.textContent = title;
+  h2.textContent = entry.name;
   card.appendChild(h2);
-
-  if (url) {
-    const a = document.createElement('a');
-    a.href = url;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    a.textContent = 'открыть на lis-skins →';
-    card.appendChild(a);
-  }
 
   const priceRow = document.createElement('div');
   priceRow.className = 'price-row';
 
-  const current = values.length ? values[values.length - 1] : null;
-  const min = values.length ? Math.min(...values) : null;
-
   const priceNow = document.createElement('span');
   priceNow.className = 'price-now';
-  priceNow.textContent = current !== null ? fmt(current) : '—';
+  priceNow.textContent = st.current !== null ? (entry.isRate ? fmtRate(st.current) : fmtUsd(st.current)) : '—';
   priceRow.appendChild(priceNow);
 
-  if (current !== null && min !== null && min > 0) {
-    const deltaPct = ((current - min) / min) * 100;
-    const delta = document.createElement('span');
-    delta.className = 'delta ' + (deltaPct > 0.05 ? 'up' : deltaPct < -0.05 ? 'down' : 'flat');
-    delta.textContent = (deltaPct >= 0 ? '+' : '') + deltaPct.toFixed(1) + '% от мин.';
-    priceRow.appendChild(delta);
+  if (st.deltaPct !== null) {
+    const arrow = document.createElement('span');
+    const dir = Math.abs(st.deltaPct) < 0.01 ? 'flat' : (st.deltaPct < 0 ? 'dn' : 'up');
+    const symbol = dir === 'flat' ? '→' : (dir === 'dn' ? '▼' : '▲');
+    arrow.className = 'arrow ' + dir;
+    arrow.textContent = `${symbol} ${st.deltaPct >= 0 ? '+' : ''}${st.deltaPct.toFixed(1)}%`;
+    priceRow.appendChild(arrow);
   }
-
   card.appendChild(priceRow);
 
-  if (min !== null) {
-    const minEl = document.createElement('div');
-    minEl.className = 'price-min';
-    minEl.textContent = 'Исторический минимум: ' + fmt(min);
-    card.appendChild(minEl);
+  if (!entry.isRate && st.current !== null && latestRate !== null) {
+    const rub = document.createElement('div');
+    rub.className = 'price-rub';
+    rub.textContent = '≈ ' + fmtRub(st.current * latestRate);
+    card.appendChild(rub);
   }
 
-  const canvas = document.createElement('canvas');
-  card.appendChild(canvas);
+  const badge = document.createElement('span');
+  badge.className = 'badge ' + st.badge.cls;
+  badge.textContent = st.badge.text;
+  card.appendChild(badge);
 
+  const sparkWrap = document.createElement('div');
+  sparkWrap.className = 'spark';
+  const canvas = document.createElement('canvas');
+  sparkWrap.appendChild(canvas);
+  card.appendChild(sparkWrap);
+
+  const values = entry.history.map(entry.valueOf);
   new Chart(canvas, {
     type: 'line',
     data: {
-      labels: labels,
+      labels: entry.history.map(h => h.t),
       datasets: [{
         data: values,
-        borderColor: color,
-        backgroundColor: color + '22',
+        borderColor: entry.isRate ? '#f5a623' : '#4f8cff',
+        backgroundColor: (entry.isRate ? '#f5a623' : '#4f8cff') + '22',
         fill: true,
         pointRadius: 0,
         tension: 0.15,
-        borderWidth: 2,
+        borderWidth: 1.5,
       }],
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
       animation: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        x: { display: false },
-        y: { display: true, ticks: { color: '#8b93a7', font: { size: 10 } }, grid: { color: '#262b36' } },
-      },
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: { x: { display: false }, y: { display: false } },
     },
   });
 
   return card;
 }
 
-main();
+function renderDetail(latestRate) {
+  const entry = ENTRIES.find(e => e.key === SELECTED);
+  if (!entry) return;
+
+  let panel = document.getElementById('detail');
+  if (!panel) {
+    panel = document.createElement('div');
+    panel.className = 'detail';
+    panel.id = 'detail';
+    document.getElementById('content').after(panel);
+  }
+  panel.innerHTML = '';
+
+  const st = computeStatus(entry);
+
+  const head = document.createElement('div');
+  head.className = 'detail-head';
+  const h3 = document.createElement('h3');
+  h3.textContent = entry.name + (entry.wear ? ` · ${entry.wear}` : '') + (entry.stattrak ? ' · StatTrak™' : '');
+  head.appendChild(h3);
+  if (entry.url) {
+    const a = document.createElement('a');
+    a.href = entry.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+    a.textContent = entry.isRate ? 'Источник курса →' : 'Открыть на lis-skins →';
+    head.appendChild(a);
+  }
+  panel.appendChild(head);
+
+  const chartWrap = document.createElement('div');
+  chartWrap.className = 'detail-chart';
+  const canvas = document.createElement('canvas');
+  chartWrap.appendChild(canvas);
+  panel.appendChild(chartWrap);
+
+  const values = entry.history.map(entry.valueOf);
+  const labels = entry.history.map(h => h.t);
+  const minVal = values.length ? Math.min(...values) : null;
+  const minIdx = values.indexOf(minVal);
+  const thresholdLine = (!entry.isRate && minVal !== null) ? minVal * (1 - DROP_THRESHOLD) : null;
+
+  const pointRadius = values.map((_, i) => i === minIdx ? 5 : 0);
+  const pointColor = values.map((_, i) => i === minIdx ? '#f5a623' : (entry.isRate ? '#f5a623' : '#4f8cff'));
+
+  const datasets = [{
+    label: entry.isRate ? 'Курс' : 'Цена',
+    data: values,
+    borderColor: entry.isRate ? '#f5a623' : '#4f8cff',
+    backgroundColor: (entry.isRate ? '#f5a623' : '#4f8cff') + '22',
+    fill: true,
+    pointRadius,
+    pointBackgroundColor: pointColor,
+    pointHoverRadius: 4,
+    tension: 0.15,
+    borderWidth: 2,
+  }];
+
+  if (thresholdLine !== null) {
+    datasets.push({
+      label: 'Порог алерта',
+      data: values.map(() => thresholdLine),
+      borderColor: '#ef5a5a',
+      borderDash: [6, 4],
+      borderWidth: 1.5,
+      pointRadius: 0,
+      fill: false,
+    });
+  }
+
+  if (detailChart) detailChart.destroy();
+  detailChart = new Chart(canvas, {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          filter: item => item.datasetIndex === 0,
+          callbacks: {
+            title: items => items.length ? fmtDate(items[0].label) : '',
+            label: item => entry.isRate ? fmtRate(item.parsed.y) : fmtUsd(item.parsed.y),
+          },
+        },
+      },
+      scales: {
+        x: { display: true, ticks: { color: '#8b93a7', font: { size: 10 }, maxTicksLimit: 6 }, grid: { color: '#1d212b' } },
+        y: { display: true, ticks: { color: '#8b93a7', font: { size: 10 } }, grid: { color: '#262b36' } },
+      },
+    },
+    plugins: [crosshairPlugin],
+  });
+
+  const stats = document.createElement('div');
+  stats.className = 'stats';
+  const rows = [];
+  rows.push([entry.isRate ? 'Текущий курс' : 'Текущая цена', entry.isRate ? fmtRate(st.current) : fmtUsd(st.current)]);
+  if (entry.isRate) {
+    rows.push(['Минимум за период', fmtRate(st.allMin)]);
+    rows.push(['Максимум за период', fmtRate(st.allMax)]);
+  } else {
+    rows.push(['Исторический минимум', fmtUsd(st.allMin)]);
+    rows.push(['Порог алерта', `≤ ${fmtUsd(thresholdLine)} (−${(DROP_THRESHOLD * 100).toFixed(0)}%)`]);
+  }
+  rows.push(['Точек истории', String(values.length)]);
+  rows.forEach(([k, v]) => {
+    const s = document.createElement('div');
+    s.className = 'stat';
+    s.innerHTML = `<div class="k">${k}</div><div class="v">${v}</div>`;
+    stats.appendChild(s);
+  });
+  panel.appendChild(stats);
+}
+
+const crosshairPlugin = {
+  id: 'crosshair',
+  afterDraw(chart) {
+    const active = chart.tooltip && chart.tooltip._active;
+    if (active && active.length) {
+      const x = active[0].element.x;
+      const { top, bottom } = chart.scales.y;
+      const ctx = chart.ctx;
+      ctx.save();
+      ctx.beginPath();
+      ctx.setLineDash([4, 4]);
+      ctx.moveTo(x, top);
+      ctx.lineTo(x, bottom);
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(139,147,167,0.6)';
+      ctx.stroke();
+      ctx.restore();
+    }
+  },
+};
+
+loadAndRender();
 </script>
 </body>
 </html>

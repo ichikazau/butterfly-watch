@@ -177,6 +177,10 @@
   </div>
 
 <script>
+// Set after deploying cloudflare-worker/trigger-check.js — until then the
+// refresh button just re-reads the cached data.json (old behaviour).
+const WORKER_URL = '';
+
 const DROP_THRESHOLD = 0.05;
 const WEAR_MAP = {
   "Factory New": "FN",
@@ -189,6 +193,7 @@ const WEAR_MAP = {
 let ENTRIES = [];
 let SELECTED = null;
 let detailChart = null;
+let LAST_UPDATED = null;
 
 function parseWear(name) {
   const m = name.match(/\(([^)]+)\)\s*$/);
@@ -210,6 +215,8 @@ async function loadAndRender() {
     content.innerHTML = '<div class="error">Не удалось загрузить data.json: ' + e + '</div>';
     return;
   }
+
+  LAST_UPDATED = data.last_updated;
 
   const rateHistory = (data.usd_rub && data.usd_rub.history) || [];
   const latestRate = rateHistory.length ? rateHistory[rateHistory.length - 1].rate : null;
@@ -265,7 +272,9 @@ function renderStatusBar(lastUpdated, latestRate) {
   const refresh = document.createElement('span');
   refresh.className = 'chip btn';
   refresh.textContent = '↻ обновить';
-  refresh.onclick = () => loadAndRender();
+  refresh.onclick = WORKER_URL
+    ? () => triggerLiveCheck(refresh)
+    : () => loadAndRender();
   bar.appendChild(refresh);
 }
 
@@ -274,6 +283,46 @@ function mkChip(text) {
   c.className = 'chip';
   c.textContent = text;
   return c;
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// Kicks off a real check_prices.py run via the Cloudflare Worker, then polls
+// data.json until the run's result lands (or times out), instead of just
+// re-reading whatever was already cached.
+async function triggerLiveCheck(el) {
+  const original = el.textContent;
+  const prevUpdated = LAST_UPDATED;
+  el.textContent = '⏳ запускаем проверку...';
+  el.style.pointerEvents = 'none';
+  try {
+    const res = await fetch(WORKER_URL, { method: 'POST' });
+    if (res.status === 429) {
+      const body = await res.json().catch(() => ({}));
+      el.textContent = body.retryAfterSec ? `⏳ подождите ~${body.retryAfterSec}с` : '⏳ уже проверяется...';
+      await sleep(2500);
+    } else if (!res.ok) {
+      throw new Error('trigger failed: ' + res.status);
+    } else {
+      el.textContent = '⏳ ждём результат...';
+    }
+
+    const deadline = Date.now() + 45000;
+    while (Date.now() < deadline) {
+      await sleep(3000);
+      try {
+        const r = await fetch('data.json?_=' + Date.now());
+        const d = await r.json();
+        if (d.last_updated && d.last_updated !== prevUpdated) break;
+      } catch (_) { /* keep polling */ }
+    }
+  } catch (e) {
+    console.error('Live check failed, falling back to cached data:', e);
+  } finally {
+    el.textContent = original;
+    el.style.pointerEvents = '';
+    await loadAndRender();
+  }
 }
 
 // prevMin excludes the latest point (mirrors the server's alert check);

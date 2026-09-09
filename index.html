@@ -213,7 +213,6 @@
 // refresh button just re-reads the cached data.json (old behaviour).
 const WORKER_URL = 'https://butterfly-watch-trigger.pocta1484.workers.dev/';
 
-const DROP_THRESHOLD = 0.05;
 const WEAR_MAP = {
   "Factory New": "FN",
   "Minimal Wear": "MW",
@@ -320,7 +319,7 @@ function renderStatusBar(lastUpdated, latestRate) {
     () => { const c = document.createElement('span'); c.className = 'chip';
       const dot = document.createElement('span'); dot.className = 'dot';
       c.appendChild(dot); c.appendChild(document.createTextNode('проверка каждые 3 минуты')); return c; },
-    () => mkChip(`порог алерта ≤ −${(DROP_THRESHOLD * 100).toFixed(0)}%`),
+    () => mkChip('алерт: любой новый минимум'),
     () => mkChip('обновлено: ' + (lastUpdated ? fmtDate(lastUpdated) : '—')),
     () => mkChip('курс ЦБ: ' + (latestRate !== null ? fmtRate(latestRate) : '—')),
   ];
@@ -456,8 +455,9 @@ function computeStatus(entry) {
   let badge;
   if (values.length <= 1) {
     badge = { text: 'точка отсчёта', cls: 'baseline' };
-  } else if (!entry.isRate && prevMin !== null && current <= prevMin * (1 - DROP_THRESHOLD)) {
-    badge = { text: 'ниже порога!', cls: 'alert' };
+  } else if (!entry.isRate && prevMin !== null && current < prevMin) {
+    const dropPct = (1 - current / prevMin) * 100;
+    badge = { text: `новый минимум! −${dropPct.toFixed(1)}%`, cls: 'alert' };
   } else if (current !== null && allMin !== null && current <= allMin + 1e-9) {
     badge = { text: 'на минимуме', cls: 'atmin' };
   } else {
@@ -649,7 +649,6 @@ function renderDetail(latestRate) {
   const labels = entry.history.map(h => h.t);
   const minVal = values.length ? Math.min(...values) : null;
   const minIdx = values.indexOf(minVal);
-  const thresholdLine = (!entry.isRate && minVal !== null) ? minVal * (1 - DROP_THRESHOLD) : null;
 
   const pointRadius = values.map((_, i) => i === minIdx ? 5 : 0);
   const pointColor = values.map((_, i) => i === minIdx ? '#f5a623' : (entry.isRate ? '#f5a623' : '#4f8cff'));
@@ -666,18 +665,6 @@ function renderDetail(latestRate) {
     tension: 0.15,
     borderWidth: 2,
   }];
-
-  if (thresholdLine !== null) {
-    datasets.push({
-      label: 'Порог алерта',
-      data: values.map(() => thresholdLine),
-      borderColor: '#ef5a5a',
-      borderDash: [6, 4],
-      borderWidth: 1.5,
-      pointRadius: 0,
-      fill: false,
-    });
-  }
 
   if (detailChart) detailChart.destroy();
   detailChart = new Chart(canvas, {
@@ -715,7 +702,6 @@ function renderDetail(latestRate) {
     rows.push(['Максимум за период', fmtRate(st.allMax)]);
   } else {
     rows.push(['Исторический минимум', fmtUsd(st.allMin)]);
-    rows.push(['Порог алерта', `≤ ${fmtUsd(thresholdLine)} (−${(DROP_THRESHOLD * 100).toFixed(0)}%)`]);
   }
   if (entry.csmarketcap) {
     rows.push(['CSMarketCap мин.', `${fmtUsd(entry.csmarketcap.min_price)} (${entry.csmarketcap.min_market})`]);

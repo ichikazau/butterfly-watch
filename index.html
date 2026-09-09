@@ -132,7 +132,7 @@
     gap: 8px;
     margin-bottom: 16px;
   }
-  .filters select {
+  .filters select, .filters input[type="search"] {
     background: var(--card);
     border: 1px solid var(--border);
     color: var(--text);
@@ -141,6 +141,18 @@
     font-size: 12px;
     font-family: inherit;
   }
+  .filters input[type="search"] {
+    flex: 1 1 180px;
+    min-width: 140px;
+  }
+  .filters input[type="search"]::placeholder { color: var(--muted); }
+
+  .card-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 11px;
+  }
+  .card-link:hover { color: var(--accent); }
 
   /* Detail panel */
   .detail {
@@ -217,6 +229,7 @@ let LAST_UPDATED = null;
 let LATEST_RATE = null;
 let FILTER_KNIFE = 'all';
 let FILTER_SKIN = 'all';
+let SEARCH_QUERY = '';
 
 function parseWear(name) {
   const m = name.match(/\(([^)]+)\)\s*$/);
@@ -345,6 +358,13 @@ function renderFilters() {
     FILTER_SKIN = v;
     renderGrid(LATEST_RATE);
   }));
+
+  const search = document.createElement('input');
+  search.type = 'search';
+  search.placeholder = 'Поиск по названию…';
+  search.value = SEARCH_QUERY;
+  search.oninput = () => { SEARCH_QUERY = search.value; renderGrid(LATEST_RATE); };
+  bar.appendChild(search);
 }
 
 function mkFilterSelect(allLabel, options, current, onChange) {
@@ -365,6 +385,19 @@ function mkFilterSelect(allLabel, options, current, onChange) {
 }
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+function median(values) {
+  if (!values.length) return null;
+  const sorted = [...values].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+}
+
+function medianOverHours(entry, hours) {
+  const cutoff = Date.now() - hours * 3600 * 1000;
+  const values = entry.history.filter(h => new Date(h.t).getTime() >= cutoff).map(entry.valueOf);
+  return median(values);
+}
 
 // Kicks off a real check_prices.py run via the Cloudflare Worker, then polls
 // data.json until the run's result lands (or times out), instead of just
@@ -456,10 +489,12 @@ function renderGrid(latestRate) {
   grid.className = 'grid';
   content.appendChild(grid);
 
+  const query = SEARCH_QUERY.trim().toLowerCase();
   const visible = ENTRIES.filter(e =>
     e.isRate ||
     ((FILTER_KNIFE === 'all' || e.knife === FILTER_KNIFE) &&
-     (FILTER_SKIN === 'all' || e.skinGroup === FILTER_SKIN))
+     (FILTER_SKIN === 'all' || e.skinGroup === FILTER_SKIN) &&
+     (!query || e.name.toLowerCase().includes(query)))
   );
   visible.forEach(entry => grid.appendChild(renderCard(entry, latestRate)));
 }
@@ -481,6 +516,17 @@ function renderCard(entry, latestRate) {
   const h2 = document.createElement('h2');
   h2.textContent = entry.name;
   card.appendChild(h2);
+
+  if (entry.url) {
+    const link = document.createElement('a');
+    link.className = 'card-link';
+    link.href = entry.url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.textContent = entry.isRate ? 'источник →' : 'lis-skins →';
+    link.onclick = e => e.stopPropagation();
+    card.appendChild(link);
+  }
 
   const priceRow = document.createElement('div');
   priceRow.className = 'price-row';
@@ -675,6 +721,11 @@ function renderDetail(latestRate) {
     rows.push(['CSMarketCap мин.', `${fmtUsd(entry.csmarketcap.min_price)} (${entry.csmarketcap.min_market})`]);
     rows.push(['lis-skins дешевле всех?', entry.csmarketcap.lis_cheapest ? 'да 🏆' : 'нет']);
   }
+  const fmt = entry.isRate ? fmtRate : fmtUsd;
+  const med1d = medianOverHours(entry, 24);
+  const med7d = medianOverHours(entry, 24 * 7);
+  rows.push(['Медиана за 24ч', med1d !== null ? fmt(med1d) : '—']);
+  rows.push(['Медиана за 7д', med7d !== null ? fmt(med7d) : '—']);
   rows.push(['Точек истории', String(values.length)]);
   rows.forEach(([k, v]) => {
     const s = document.createElement('div');

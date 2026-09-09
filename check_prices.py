@@ -11,14 +11,15 @@ DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.json"
 LIS_SKINS_FEED = "https://lis-skins.com/market_export_json/csgo.json"
 CBR_RATE_URL = "https://www.cbr-xml-daily.ru/daily_json.js"
 DROP_THRESHOLD = 0.05  # 5% below the historical minimum
-LAST_CHECK_THRESHOLD = 0.07  # 7% move (either direction) since the previous check
+PREV_CHECK_DROP_THRESHOLD = 0.05  # 5% drop since the previous check (rises are not alerted on)
 MAX_HISTORY_POINTS = 8064  # ~4 weeks at 5-minute intervals
 
 # csmarketcap.com aggregates the same item's price across ~20-30 marketplaces.
-# Checking all 94 tracked items there is heavy on their server, so it only
-# runs once an hour (gated in main()) rather than on every 3-minute check.
+# Checking all 186 tracked items there is heavy on their server, so it only
+# runs every CSMARKETCAP_CHECK_INTERVAL_MINUTES (gated in main()) rather than
+# on every 3-minute check.
 CSMARKETCAP_BASE = "https://csmarketcap.com/ru/item"
-CSMARKETCAP_CHECK_MINUTE_WINDOW = 3  # run when now.minute < this (cron fires on :00,:03,:06,...)
+CSMARKETCAP_CHECK_INTERVAL_MINUTES = 15  # cron fires on :00,:03,:06,... — all multiples of 15 line up
 CSMARKETCAP_REQUEST_DELAY = 0.3  # seconds between requests, be polite
 WEAR_SLUGS = {
     "Factory New": "factory-new",
@@ -128,6 +129,101 @@ ITEMS = {
     "karambit-slaughter-st-ft": "★ StatTrak™ Karambit | Slaughter (Field-Tested)",
     "karambit-slaughter-st-mw": "★ StatTrak™ Karambit | Slaughter (Minimal Wear)",
     "karambit-tiger-tooth-st-fn": "★ StatTrak™ Karambit | Tiger Tooth (Factory New)",
+    # Butterfly Knife | Freehand
+    "butterfly-knife-freehand-bs": "★ Butterfly Knife | Freehand (Battle-Scarred)",
+    "butterfly-knife-freehand-fn": "★ Butterfly Knife | Freehand (Factory New)",
+    "butterfly-knife-freehand-ft": "★ Butterfly Knife | Freehand (Field-Tested)",
+    "butterfly-knife-freehand-mw": "★ Butterfly Knife | Freehand (Minimal Wear)",
+    "butterfly-knife-freehand-ww": "★ Butterfly Knife | Freehand (Well-Worn)",
+    "stattrak-butterfly-knife-freehand-fn": "★ StatTrak™ Butterfly Knife | Freehand (Factory New)",
+    "stattrak-butterfly-knife-freehand-ft": "★ StatTrak™ Butterfly Knife | Freehand (Field-Tested)",
+    "stattrak-butterfly-knife-freehand-mw": "★ StatTrak™ Butterfly Knife | Freehand (Minimal Wear)",
+    "stattrak-butterfly-knife-freehand-ww": "★ StatTrak™ Butterfly Knife | Freehand (Well-Worn)",
+    # AWP (2000-40000₽, FN/MW/FT, no StatTrak)
+    "awp-asiimov-ft": "AWP | Asiimov (Field-Tested)",
+    "awp-atheris-fn": "AWP | Atheris (Factory New)",
+    "awp-boom-fn": "AWP | BOOM (Factory New)",
+    "awp-boom-ft": "AWP | BOOM (Field-Tested)",
+    "awp-boom-mw": "AWP | BOOM (Minimal Wear)",
+    "awp-black-box-fn": "AWP | Black Box (Factory New)",
+    "awp-cmyk-ft": "AWP | CMYK (Field-Tested)",
+    "awp-cmyk-mw": "AWP | CMYK (Minimal Wear)",
+    "awp-chromatic-aberration-fn": "AWP | Chromatic Aberration (Factory New)",
+    "awp-chromatic-aberration-ft": "AWP | Chromatic Aberration (Field-Tested)",
+    "awp-chromatic-aberration-mw": "AWP | Chromatic Aberration (Minimal Wear)",
+    "awp-chrome-cannon-fn": "AWP | Chrome Cannon (Factory New)",
+    "awp-chrome-cannon-ft": "AWP | Chrome Cannon (Field-Tested)",
+    "awp-chrome-cannon-mw": "AWP | Chrome Cannon (Minimal Wear)",
+    "awp-containment-breach-fn": "AWP | Containment Breach (Factory New)",
+    "awp-containment-breach-ft": "AWP | Containment Breach (Field-Tested)",
+    "awp-containment-breach-mw": "AWP | Containment Breach (Minimal Wear)",
+    "awp-corticera-fn": "AWP | Corticera (Factory New)",
+    "awp-crakow-fn": "AWP | Crakow! (Factory New)",
+    "awp-crakow-mw": "AWP | Crakow! (Minimal Wear)",
+    "awp-electric-hive-fn": "AWP | Electric Hive (Factory New)",
+    "awp-electric-hive-mw": "AWP | Electric Hive (Minimal Wear)",
+    "awp-elite-build-fn": "AWP | Elite Build (Factory New)",
+    "awp-exoskeleton-fn": "AWP | Exoskeleton (Factory New)",
+    "awp-graphite-fn": "AWP | Graphite (Factory New)",
+    "awp-graphite-mw": "AWP | Graphite (Minimal Wear)",
+    "awp-green-energy-fn": "AWP | Green Energy (Factory New)",
+    "awp-hyper-beast-fn": "AWP | Hyper Beast (Factory New)",
+    "awp-hyper-beast-ft": "AWP | Hyper Beast (Field-Tested)",
+    "awp-hyper-beast-mw": "AWP | Hyper Beast (Minimal Wear)",
+    "awp-ice-coaled-fn": "AWP | Ice Coaled (Factory New)",
+    "awp-longdog-ft": "AWP | LongDog (Field-Tested)",
+    "awp-longdog-mw": "AWP | LongDog (Minimal Wear)",
+    "awp-man-o-war-ft": "AWP | Man-o'-war (Field-Tested)",
+    "awp-man-o-war-mw": "AWP | Man-o'-war (Minimal Wear)",
+    "awp-neo-noir-fn": "AWP | Neo-Noir (Factory New)",
+    "awp-neo-noir-ft": "AWP | Neo-Noir (Field-Tested)",
+    "awp-neo-noir-mw": "AWP | Neo-Noir (Minimal Wear)",
+    "awp-oni-taiji-ft": "AWP | Oni Taiji (Field-Tested)",
+    "awp-oni-taiji-mw": "AWP | Oni Taiji (Minimal Wear)",
+    "awp-pop-awp-fn": "AWP | POP AWP (Factory New)",
+    "awp-pink-ddpat-fn": "AWP | Pink DDPAT (Factory New)",
+    "awp-pink-ddpat-mw": "AWP | Pink DDPAT (Minimal Wear)",
+    "awp-printstream-fn": "AWP | Printstream (Factory New)",
+    "awp-printstream-ft": "AWP | Printstream (Field-Tested)",
+    "awp-printstream-mw": "AWP | Printstream (Minimal Wear)",
+    "awp-queen-s-gambit-fn": "AWP | Queen's Gambit (Factory New)",
+    "awp-queen-s-gambit-ft": "AWP | Queen's Gambit (Field-Tested)",
+    "awp-queen-s-gambit-mw": "AWP | Queen's Gambit (Minimal Wear)",
+    "awp-redline-ft": "AWP | Redline (Field-Tested)",
+    "awp-redline-mw": "AWP | Redline (Minimal Wear)",
+    "awp-silk-tiger-ft": "AWP | Silk Tiger (Field-Tested)",
+    "awp-silk-tiger-mw": "AWP | Silk Tiger (Minimal Wear)",
+    "awp-snake-camo-fn": "AWP | Snake Camo (Factory New)",
+    "awp-snake-camo-ft": "AWP | Snake Camo (Field-Tested)",
+    "awp-snake-camo-mw": "AWP | Snake Camo (Minimal Wear)",
+    "awp-sovereign-flame-ft": "AWP | Sovereign Flame (Field-Tested)",
+    "awp-sovereign-flame-mw": "AWP | Sovereign Flame (Minimal Wear)",
+    "awp-sun-in-leo-fn": "AWP | Sun in Leo (Factory New)",
+    "awp-sun-in-leo-mw": "AWP | Sun in Leo (Minimal Wear)",
+    "awp-the-end-fn": "AWP | The End (Factory New)",
+    "awp-wildfire-fn": "AWP | Wildfire (Factory New)",
+    "awp-wildfire-ft": "AWP | Wildfire (Field-Tested)",
+    "awp-wildfire-mw": "AWP | Wildfire (Minimal Wear)",
+    # AK-47 (selected skins, 3000-40000₽, FN/MW/FT, no StatTrak)
+    "ak-47-aquamarine-revenge-fn": "AK-47 | Aquamarine Revenge (Factory New)",
+    "ak-47-aquamarine-revenge-mw": "AK-47 | Aquamarine Revenge (Minimal Wear)",
+    "ak-47-b-the-monster-fn": "AK-47 | B the Monster (Factory New)",
+    "ak-47-b-the-monster-ft": "AK-47 | B the Monster (Field-Tested)",
+    "ak-47-b-the-monster-mw": "AK-47 | B the Monster (Minimal Wear)",
+    "ak-47-bloodsport-fn": "AK-47 | Bloodsport (Factory New)",
+    "ak-47-bloodsport-ft": "AK-47 | Bloodsport (Field-Tested)",
+    "ak-47-bloodsport-mw": "AK-47 | Bloodsport (Minimal Wear)",
+    "ak-47-inheritance-fn": "AK-47 | Inheritance (Factory New)",
+    "ak-47-inheritance-mw": "AK-47 | Inheritance (Minimal Wear)",
+    "ak-47-neon-rider-fn": "AK-47 | Neon Rider (Factory New)",
+    "ak-47-neon-rider-ft": "AK-47 | Neon Rider (Field-Tested)",
+    "ak-47-neon-rider-mw": "AK-47 | Neon Rider (Minimal Wear)",
+    "ak-47-point-disarray-fn": "AK-47 | Point Disarray (Factory New)",
+    "ak-47-the-empress-fn": "AK-47 | The Empress (Factory New)",
+    "ak-47-the-empress-ft": "AK-47 | The Empress (Field-Tested)",
+    "ak-47-the-empress-mw": "AK-47 | The Empress (Minimal Wear)",
+    "ak-47-vulcan-ft": "AK-47 | Vulcan (Field-Tested)",
+    "ak-47-vulcan-mw": "AK-47 | Vulcan (Minimal Wear)",
 }
 
 
@@ -236,7 +332,7 @@ def send_telegram(text):
 def main():
     now_dt = datetime.now(timezone.utc)
     now = now_dt.isoformat(timespec="seconds").replace("+00:00", "Z")
-    check_csmarketcap = now_dt.minute < CSMARKETCAP_CHECK_MINUTE_WINDOW
+    check_csmarketcap = now_dt.minute % CSMARKETCAP_CHECK_INTERVAL_MINUTES == 0
 
     data = load_data()
     data.setdefault("items", {})
@@ -294,10 +390,8 @@ def main():
 
         if prev_price is not None and prev_price > 0:
             change_pct = (price - prev_price) / prev_price * 100
-            if change_pct <= -LAST_CHECK_THRESHOLD * 100:
-                reasons.append(f"\U0001F53B резкое падение за одну проверку: {change_pct:.1f}% (было ${prev_price:.2f})")
-            elif change_pct >= LAST_CHECK_THRESHOLD * 100:
-                reasons.append(f"\U0001F53A резкий рост за одну проверку: +{change_pct:.1f}% (было ${prev_price:.2f})")
+            if change_pct <= -PREV_CHECK_DROP_THRESHOLD * 100:
+                reasons.append(f"\U0001F53B падение за одну проверку: {change_pct:.1f}% (было ${prev_price:.2f})")
 
         if check_csmarketcap:
             item_slug, wear_slug = csmarketcap_slug(match_name)

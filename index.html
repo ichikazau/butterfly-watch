@@ -452,10 +452,17 @@ function computeStatus(entry) {
     deltaPct = (current - prev) / prev * 100;
   }
 
+  // New items haven't set a meaningful low yet — mirrors the server's
+  // MIN_HISTORY_AGE_FOR_MIN_ALERT warm-up so freshly added items don't
+  // flash "new minimum!" (and jump to the top of the sort) on day one.
+  const firstTs = history.length ? new Date(history[0].t).getTime() : null;
+  const historyAgeMs = firstTs !== null ? Date.now() - firstTs : 0;
+  const warmedUp = historyAgeMs >= 24 * 3600 * 1000;
+
   let badge;
   if (values.length <= 1) {
     badge = { text: 'точка отсчёта', cls: 'baseline' };
-  } else if (!entry.isRate && prevMin !== null && current < prevMin) {
+  } else if (!entry.isRate && prevMin !== null && current < prevMin && warmedUp) {
     const dropPct = (1 - current / prevMin) * 100;
     badge = { text: `новый минимум! −${dropPct.toFixed(1)}%`, cls: 'alert' };
   } else if (current !== null && allMin !== null && current <= allMin + 1e-9) {

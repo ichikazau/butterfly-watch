@@ -5,12 +5,13 @@ import re
 import sys
 import time
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.json")
 LIS_SKINS_FEED = "https://lis-skins.com/market_export_json/csgo.json"
 CBR_RATE_URL = "https://www.cbr-xml-daily.ru/daily_json.js"
 PREV_CHECK_DROP_THRESHOLD = 0.05  # 5% drop since the previous check (rises are not alerted on)
+MIN_HISTORY_AGE_FOR_MIN_ALERT = timedelta(hours=24)  # new items haven't set a meaningful low yet
 MAX_HISTORY_POINTS = 8064  # ~4 weeks at 5-minute intervals
 
 # csmarketcap.com aggregates the same item's price across ~20-30 marketplaces.
@@ -377,13 +378,21 @@ def main():
 
         prev_min = min((h["price"] for h in history), default=None)
         prev_price = history[-1]["price"] if history else None
+        first_ts = history[0]["t"] if history else None
 
         history.append({"t": now, "price": price})
         trim(history)
 
         reasons = []
 
-        if prev_min is not None and price < prev_min:
+        history_age = (
+            now_dt - datetime.fromisoformat(first_ts.replace("Z", "+00:00"))
+            if first_ts else timedelta(0)
+        )
+        if (
+            prev_min is not None and price < prev_min
+            and history_age >= MIN_HISTORY_AGE_FOR_MIN_ALERT
+        ):
             drop_pct = (1 - price / prev_min) * 100
             reasons.append(f"\U0001F4C9 новый исторический минимум: ниже прошлого на {drop_pct:.1f}% (было ${prev_min:.2f})")
 

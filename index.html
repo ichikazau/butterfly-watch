@@ -120,8 +120,27 @@
   .badge.atmin { color: var(--green); background: rgba(53,196,122,0.14); }
   .badge.near { color: var(--accent); background: rgba(79,140,255,0.12); }
   .badge.alert { color: #fff; background: var(--red); }
+  .badge.cheapest { color: var(--gold); background: rgba(245,166,35,0.14); margin-left: 6px; }
+
+  .csmc-row { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
   .spark { margin-top: 10px; height: 46px; }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .filters select {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-family: inherit;
+  }
 
   /* Detail panel */
   .detail {
@@ -166,6 +185,7 @@
   <h1>🦋 Butterfly Watch</h1>
   <div class="subtitle">Отслеживание цен ★ Butterfly Knife на lis-skins.com</div>
   <div class="statusbar" id="statusbar"></div>
+  <div class="filters" id="filters"></div>
 
   <div id="content">Загрузка...</div>
 
@@ -194,10 +214,23 @@ let ENTRIES = [];
 let SELECTED = null;
 let detailChart = null;
 let LAST_UPDATED = null;
+let LATEST_RATE = null;
+let FILTER_KNIFE = 'all';
+let FILTER_SKIN = 'all';
 
 function parseWear(name) {
   const m = name.match(/\(([^)]+)\)\s*$/);
   return m ? (WEAR_MAP[m[1]] || m[1]) : null;
+}
+
+// "★ StatTrak™ Karambit | Doppler Phase 1 (Factory New)" ->
+// { knife: "Karambit", skin: "Doppler Phase 1", skinGroup: "Doppler" }
+function parseKnifeAndSkin(name) {
+  const n = name.replace('★', '').replace('StatTrak™', '').trim();
+  const [knife, rest] = n.split('|').map(s => s.trim());
+  const skin = rest.replace(/\([^)]*\)\s*$/, '').trim();
+  const skinGroup = skin.replace(/\s+Phase\s+\d+$/i, '');
+  return { knife, skin, skinGroup };
 }
 
 function fmtUsd(v) { return '$' + v.toFixed(2); }
@@ -220,6 +253,7 @@ async function loadAndRender() {
 
   const rateHistory = (data.usd_rub && data.usd_rub.history) || [];
   const latestRate = rateHistory.length ? rateHistory[rateHistory.length - 1].rate : null;
+  LATEST_RATE = latestRate;
 
   ENTRIES = [];
   ENTRIES.push({
@@ -235,6 +269,7 @@ async function loadAndRender() {
   const itemEntries = [];
   for (const slug of Object.keys(items)) {
     const item = items[slug];
+    const { knife, skin, skinGroup } = parseKnifeAndSkin(item.name);
     itemEntries.push({
       key: slug,
       isRate: false,
@@ -242,6 +277,8 @@ async function loadAndRender() {
       url: item.url,
       wear: parseWear(item.name),
       stattrak: item.name.includes('StatTrak'),
+      knife, skin, skinGroup,
+      csmarketcap: item.csmarketcap || null,
       history: item.history || [],
       valueOf: h => h.price,
     });
@@ -253,6 +290,7 @@ async function loadAndRender() {
   ENTRIES.push(...itemEntries);
 
   renderStatusBar(data.last_updated, latestRate);
+  renderFilters();
   renderGrid(latestRate);
 
   if (!SELECTED || !ENTRIES.some(e => e.key === SELECTED)) {
@@ -289,6 +327,41 @@ function mkChip(text) {
   c.className = 'chip';
   c.textContent = text;
   return c;
+}
+
+function renderFilters() {
+  const bar = document.getElementById('filters');
+  bar.innerHTML = '';
+  const itemEntries = ENTRIES.filter(e => !e.isRate);
+
+  const knives = [...new Set(itemEntries.map(e => e.knife))].sort();
+  const skins = [...new Set(itemEntries.map(e => e.skinGroup))].sort();
+
+  bar.appendChild(mkFilterSelect('Все ножи', knives, FILTER_KNIFE, v => {
+    FILTER_KNIFE = v;
+    renderGrid(LATEST_RATE);
+  }));
+  bar.appendChild(mkFilterSelect('Все скины', skins, FILTER_SKIN, v => {
+    FILTER_SKIN = v;
+    renderGrid(LATEST_RATE);
+  }));
+}
+
+function mkFilterSelect(allLabel, options, current, onChange) {
+  const sel = document.createElement('select');
+  const allOpt = document.createElement('option');
+  allOpt.value = 'all';
+  allOpt.textContent = allLabel;
+  sel.appendChild(allOpt);
+  options.forEach(v => {
+    const o = document.createElement('option');
+    o.value = v;
+    o.textContent = v;
+    sel.appendChild(o);
+  });
+  sel.value = current;
+  sel.onchange = () => onChange(sel.value);
+  return sel;
 }
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -383,7 +456,12 @@ function renderGrid(latestRate) {
   grid.className = 'grid';
   content.appendChild(grid);
 
-  ENTRIES.forEach(entry => grid.appendChild(renderCard(entry, latestRate)));
+  const visible = ENTRIES.filter(e =>
+    e.isRate ||
+    ((FILTER_KNIFE === 'all' || e.knife === FILTER_KNIFE) &&
+     (FILTER_SKIN === 'all' || e.skinGroup === FILTER_SKIN))
+  );
+  visible.forEach(entry => grid.appendChild(renderCard(entry, latestRate)));
 }
 
 function renderCard(entry, latestRate) {
@@ -429,10 +507,24 @@ function renderCard(entry, latestRate) {
     card.appendChild(rub);
   }
 
+  if (!entry.isRate && entry.csmarketcap) {
+    const cs = document.createElement('div');
+    cs.className = 'csmc-row';
+    cs.textContent = `CSMarketCap мин.: ${fmtUsd(entry.csmarketcap.min_price)} (${entry.csmarketcap.min_market})`;
+    card.appendChild(cs);
+  }
+
   const badge = document.createElement('span');
   badge.className = 'badge ' + st.badge.cls;
   badge.textContent = st.badge.text;
   card.appendChild(badge);
+
+  if (!entry.isRate && entry.csmarketcap && entry.csmarketcap.lis_cheapest) {
+    const cheap = document.createElement('span');
+    cheap.className = 'badge cheapest';
+    cheap.textContent = '🏆 дешевле всех';
+    card.appendChild(cheap);
+  }
 
   const sparkWrap = document.createElement('div');
   sparkWrap.className = 'spark';
@@ -491,6 +583,12 @@ function renderDetail(latestRate) {
     const a = document.createElement('a');
     a.href = entry.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
     a.textContent = entry.isRate ? 'Источник курса →' : 'Открыть на lis-skins →';
+    head.appendChild(a);
+  }
+  if (entry.csmarketcap && entry.csmarketcap.url) {
+    const a = document.createElement('a');
+    a.href = entry.csmarketcap.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+    a.textContent = 'Открыть на CSMarketCap →';
     head.appendChild(a);
   }
   panel.appendChild(head);
@@ -572,6 +670,10 @@ function renderDetail(latestRate) {
   } else {
     rows.push(['Исторический минимум', fmtUsd(st.allMin)]);
     rows.push(['Порог алерта', `≤ ${fmtUsd(thresholdLine)} (−${(DROP_THRESHOLD * 100).toFixed(0)}%)`]);
+  }
+  if (entry.csmarketcap) {
+    rows.push(['CSMarketCap мин.', `${fmtUsd(entry.csmarketcap.min_price)} (${entry.csmarketcap.min_market})`]);
+    rows.push(['lis-skins дешевле всех?', entry.csmarketcap.lis_cheapest ? 'да 🏆' : 'нет']);
   }
   rows.push(['Точек истории', String(values.length)]);
   rows.forEach(([k, v]) => {

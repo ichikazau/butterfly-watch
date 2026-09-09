@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import json
 import os
+import re
 import sys
+import time
 import urllib.request
 from datetime import datetime, timezone
 
@@ -11,6 +13,20 @@ CBR_RATE_URL = "https://www.cbr-xml-daily.ru/daily_json.js"
 DROP_THRESHOLD = 0.05  # 5% below the historical minimum
 LAST_CHECK_THRESHOLD = 0.07  # 7% move (either direction) since the previous check
 MAX_HISTORY_POINTS = 8064  # ~4 weeks at 5-minute intervals
+
+# csmarketcap.com aggregates the same item's price across ~20-30 marketplaces.
+# Checking all 94 tracked items there is heavy on their server, so it only
+# runs once an hour (gated in main()) rather than on every 3-minute check.
+CSMARKETCAP_BASE = "https://csmarketcap.com/ru/item"
+CSMARKETCAP_CHECK_MINUTE_WINDOW = 3  # run when now.minute < this (cron fires on :00,:03,:06,...)
+CSMARKETCAP_REQUEST_DELAY = 0.3  # seconds between requests, be polite
+WEAR_SLUGS = {
+    "Factory New": "factory-new",
+    "Minimal Wear": "minimal-wear",
+    "Field-Tested": "field-tested",
+    "Well-Worn": "well-worn",
+    "Battle-Scarred": "battle-scarred",
+}
 
 # slug -> exact item name as it appears in the lis-skins JSON feed
 ITEMS = {
@@ -121,6 +137,62 @@ def fetch_json(url, timeout=30):
         return json.loads(resp.read().decode("utf-8"))
 
 
+def csmarketcap_slug(match_name):
+    """'★ StatTrak™ Karambit | Doppler Phase 1 (Factory New)' ->
+    ('stattrak-karambit-doppler-phase-1', 'factory-new')"""
+    name = match_name.replace("★", "").strip()
+    stattrak = name.startswith("StatTrak")
+    name = name.replace("StatTrak™", "").strip()
+    weapon, rest = name.split("|", 1)
+    m = re.match(r"^(.*)\((.*)\)\s*$", rest.strip())
+    skin, wear = m.group(1).strip(), m.group(2).strip()
+    base = re.sub(r"[^a-z0-9]+", "-", f"{weapon.strip()} {skin}".lower()).strip("-")
+    item_slug = ("stattrak-" if stattrak else "") + base
+    return item_slug, WEAR_SLUGS.get(wear, wear.lower())
+
+
+def _resolve_nuxt_ref(data, value, depth=0):
+    """Nuxt's __NUXT_DATA__ payload dedupes strings/objects/arrays into one
+    flat array and replaces repeated occurrences with an index into it."""
+    if depth > 6:
+        return value
+    if isinstance(value, int) and 0 <= value < len(data):
+        target = data[value]
+        if isinstance(target, (dict, list, str)):
+            return _resolve_nuxt_ref(data, target, depth + 1)
+        return target
+    if isinstance(value, dict):
+        return {k: _resolve_nuxt_ref(data, v, depth + 1) for k, v in value.items()}
+    if isinstance(value, list):
+        return [_resolve_nuxt_ref(data, v, depth + 1) for v in value]
+    return value
+
+
+def fetch_csmarketcap_offers(item_slug, wear_slug, timeout=20):
+    """Returns {market_name: price_usd, ...} for one item page, or None if
+    the page couldn't be parsed (item not listed there, layout change, etc.)."""
+    url = f"{CSMARKETCAP_BASE}/{item_slug}/{wear_slug}"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (butterfly-watch)"})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        html = resp.read().decode("utf-8")
+
+    m = re.search(r'<script[^>]*id="__NUXT_DATA__"[^>]*>', html)
+    if not m:
+        return None
+    end = html.find("</script>", m.end())
+    data = json.loads(html[m.end():end])
+
+    root = next((v for v in data if isinstance(v, dict) and "markets_offers" in v), None)
+    if root is None:
+        return None
+    offers = _resolve_nuxt_ref(data, root["markets_offers"])
+    return {
+        o["market_name"]: o["price"] / 1000
+        for o in offers
+        if isinstance(o, dict) and o.get("market_name") and o.get("price") is not None
+    }
+
+
 def load_data():
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, encoding="utf-8") as f:
@@ -162,7 +234,9 @@ def send_telegram(text):
 
 
 def main():
-    now = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
+    now_dt = datetime.now(timezone.utc)
+    now = now_dt.isoformat(timespec="seconds").replace("+00:00", "Z")
+    check_csmarketcap = now_dt.minute < CSMARKETCAP_CHECK_MINUTE_WINDOW
 
     data = load_data()
     data.setdefault("items", {})
@@ -224,6 +298,34 @@ def main():
                 reasons.append(f"\U0001F53B резкое падение за одну проверку: {change_pct:.1f}% (было ${prev_price:.2f})")
             elif change_pct >= LAST_CHECK_THRESHOLD * 100:
                 reasons.append(f"\U0001F53A резкий рост за одну проверку: +{change_pct:.1f}% (было ${prev_price:.2f})")
+
+        if check_csmarketcap:
+            item_slug, wear_slug = csmarketcap_slug(match_name)
+            csmc_url = f"{CSMARKETCAP_BASE}/{item_slug}/{wear_slug}"
+            was_cheapest = item_data.get("csmarketcap", {}).get("lis_cheapest", False)
+            try:
+                offers = fetch_csmarketcap_offers(item_slug, wear_slug)
+                others = {m: p for m, p in (offers or {}).items() if m != "lis-skins"}
+                if others:
+                    min_market, min_price = min(others.items(), key=lambda kv: kv[1])
+                    is_cheapest = price < min_price
+                    item_data["csmarketcap"] = {
+                        "min_price": min_price,
+                        "min_market": min_market,
+                        "lis_cheapest": is_cheapest,
+                        "url": csmc_url,
+                        "checked_at": now,
+                    }
+                    if is_cheapest and not was_cheapest:
+                        reasons.append(
+                            f"\U0001F3C6 lis-skins сейчас дешевле всех маркетплейсов "
+                            f"(следующий — ${min_price:.2f} на {min_market})"
+                        )
+                else:
+                    print(f"WARNING: no csmarketcap offers for {match_name}", file=sys.stderr)
+            except Exception as e:
+                print(f"WARNING: csmarketcap check failed for {match_name}: {e}", file=sys.stderr)
+            time.sleep(CSMARKETCAP_REQUEST_DELAY)
 
         if reasons:
             alerts.append(

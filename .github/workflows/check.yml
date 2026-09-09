@@ -1,8 +1,11 @@
 name: Check butterfly knife prices
 
 on:
-  schedule:
-    - cron: "2-59/5 * * * *"
+  # No schedule trigger here on purpose — GitHub's own cron scheduler
+  # throttles low-traffic public repos to roughly every 10-15 minutes
+  # regardless of the interval configured. A Cloudflare Worker Cron Trigger
+  # (cloudflare-worker/trigger-check.js) calls workflow_dispatch every 3
+  # minutes instead, which GitHub honours precisely.
   workflow_dispatch: {}
 
 permissions:

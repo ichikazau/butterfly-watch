@@ -262,7 +262,7 @@ function renderStatusBar(lastUpdated, latestRate) {
   const chips = [
     () => { const c = document.createElement('span'); c.className = 'chip';
       const dot = document.createElement('span'); dot.className = 'dot';
-      c.appendChild(dot); c.appendChild(document.createTextNode('проверка каждые 5 минут')); return c; },
+      c.appendChild(dot); c.appendChild(document.createTextNode('проверка каждые 3 минуты')); return c; },
     () => mkChip(`порог алерта ≤ −${(DROP_THRESHOLD * 100).toFixed(0)}%`),
     () => mkChip('обновлено: ' + (lastUpdated ? fmtDate(lastUpdated) : '—')),
     () => mkChip('курс ЦБ: ' + (latestRate !== null ? fmtRate(latestRate) : '—')),

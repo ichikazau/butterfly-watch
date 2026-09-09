@@ -1,7 +1,14 @@
-// Cloudflare Worker: lets the public dashboard's "обновить" button kick off a
-// real check_prices.py run on GitHub Actions, instead of just re-reading the
-// cached data.json. The GitHub token lives only in this Worker's secret
-// storage (env.GH_TOKEN) — it is never sent to or visible from the browser.
+// Cloudflare Worker with two triggers:
+//  1. fetch() — lets the public dashboard's "обновить" button kick off a
+//     real check_prices.py run on demand.
+//  2. scheduled() — a Cloudflare Cron Trigger (configured in the dashboard,
+//     Settings -> Triggers -> Cron Triggers, e.g. "*/3 * * * *") that does
+//     the same thing on a fixed interval, because GitHub's own `schedule`
+//     event throttles low-traffic public repos to ~10-15 min regardless of
+//     the cron configured in the workflow file — Cloudflare's cron doesn't.
+//
+// Either way the GitHub token lives only in this Worker's secret storage
+// (env.GH_TOKEN) — it is never sent to or visible from the browser.
 //
 // Deploy: paste this file into a new Cloudflare Worker (Workers & Pages ->
 // Create -> Create Worker -> Quick Edit), then add a secret named GH_TOKEN
@@ -30,52 +37,61 @@ export default {
       return json({ ok: false, reason: "method_not_allowed" }, 405, cors);
     }
 
-    const ghHeaders = {
-      Authorization: `Bearer ${env.GH_TOKEN}`,
-      Accept: "application/vnd.github+json",
-      "User-Agent": "butterfly-watch-worker",
-    };
+    const result = await triggerCheck(env);
+    return json(result.body, result.status, cors);
+  },
 
-    // Guard against spam: only allow a new run if the last one is finished
-    // and older than COOLDOWN_SECONDS. GitHub itself is the source of truth
-    // here, so this holds even if multiple Worker instances handle requests.
-    const runsRes = await fetch(
-      `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${WORKFLOW}/runs?per_page=1`,
-      { headers: ghHeaders }
-    );
-    if (!runsRes.ok) {
-      return json({ ok: false, reason: "github_unreachable" }, 502, cors);
-    }
-    const runsData = await runsRes.json();
-    const lastRun = runsData.workflow_runs && runsData.workflow_runs[0];
-    if (lastRun) {
-      const ageSec = (Date.now() - new Date(lastRun.created_at).getTime()) / 1000;
-      if (lastRun.status !== "completed" || ageSec < COOLDOWN_SECONDS) {
-        return json(
-          { ok: false, reason: "cooldown", retryAfterSec: Math.ceil(COOLDOWN_SECONDS - ageSec) },
-          429,
-          cors
-        );
-      }
-    }
-
-    const dispatchRes = await fetch(
-      `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
-      {
-        method: "POST",
-        headers: { ...ghHeaders, "Content-Type": "application/json" },
-        body: JSON.stringify({ ref: "main" }),
-      }
-    );
-
-    if (dispatchRes.status !== 204) {
-      const detail = await dispatchRes.text();
-      return json({ ok: false, reason: "dispatch_failed", detail }, 502, cors);
-    }
-
-    return json({ ok: true }, 200, cors);
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(triggerCheck(env));
   },
 };
+
+// Guards against overlapping runs (button + cron firing close together) by
+// checking the age/status of the last workflow run on GitHub before
+// dispatching a new one — GitHub itself is the source of truth here, so
+// this holds even across separate Worker invocations.
+async function triggerCheck(env) {
+  const ghHeaders = {
+    Authorization: `Bearer ${env.GH_TOKEN}`,
+    Accept: "application/vnd.github+json",
+    "User-Agent": "butterfly-watch-worker",
+  };
+
+  const runsRes = await fetch(
+    `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${WORKFLOW}/runs?per_page=1`,
+    { headers: ghHeaders }
+  );
+  if (!runsRes.ok) {
+    return { status: 502, body: { ok: false, reason: "github_unreachable" } };
+  }
+  const runsData = await runsRes.json();
+  const lastRun = runsData.workflow_runs && runsData.workflow_runs[0];
+  if (lastRun) {
+    const ageSec = (Date.now() - new Date(lastRun.created_at).getTime()) / 1000;
+    if (lastRun.status !== "completed" || ageSec < COOLDOWN_SECONDS) {
+      return {
+        status: 429,
+        body: { ok: false, reason: "cooldown", retryAfterSec: Math.ceil(COOLDOWN_SECONDS - ageSec) },
+      };
+    }
+  }
+
+  const dispatchRes = await fetch(
+    `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${WORKFLOW}/dispatches`,
+    {
+      method: "POST",
+      headers: { ...ghHeaders, "Content-Type": "application/json" },
+      body: JSON.stringify({ ref: "main" }),
+    }
+  );
+
+  if (dispatchRes.status !== 204) {
+    const detail = await dispatchRes.text();
+    return { status: 502, body: { ok: false, reason: "dispatch_failed", detail } };
+  }
+
+  return { status: 200, body: { ok: true } };
+}
 
 function json(body, status, extraHeaders) {
   return new Response(JSON.stringify(body), {

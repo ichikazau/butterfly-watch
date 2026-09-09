@@ -232,9 +232,10 @@ async function loadAndRender() {
   });
 
   const items = data.items || {};
+  const itemEntries = [];
   for (const slug of Object.keys(items)) {
     const item = items[slug];
-    ENTRIES.push({
+    itemEntries.push({
       key: slug,
       isRate: false,
       name: item.name,
@@ -245,6 +246,11 @@ async function loadAndRender() {
       valueOf: h => h.price,
     });
   }
+  // Biggest drop from the historical low first (already-alerting items lead,
+  // then "at minimum", then closest-to-minimum); items with only one data
+  // point yet (nothing to compare against) sink to the end.
+  itemEntries.sort((a, b) => dropRank(a) - dropRank(b));
+  ENTRIES.push(...itemEntries);
 
   renderStatusBar(data.last_updated, latestRate);
   renderGrid(latestRate);
@@ -354,6 +360,20 @@ function computeStatus(entry) {
   }
 
   return { current, prev, deltaPct, allMin, allMax, prevMin, badge };
+}
+
+// Lower = closer to (or further below) the historical low = shown higher up.
+function dropRank(entry) {
+  const st = computeStatus(entry);
+  if (st.badge.cls === 'alert') {
+    return st.prevMin ? st.current / st.prevMin : 0; // < 1, smaller = bigger drop
+  }
+  if (st.badge.cls === 'atmin') return 1;
+  if (st.badge.cls === 'near') {
+    const frac = st.allMin ? (st.current - st.allMin) / st.allMin : 0;
+    return 2 + Math.max(frac, 0);
+  }
+  return 1000; // baseline — not enough history to rank yet
 }
 
 function renderGrid(latestRate) {

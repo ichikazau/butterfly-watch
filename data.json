@@ -5803,6 +5803,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1179.72
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1179.72
         }
       ],
       "csmarketcap": {
@@ -5810,7 +5814,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-slaughter/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "slaughter-fn": {
@@ -11616,6 +11620,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1501.06
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1501.06
         }
       ],
       "csmarketcap": {
@@ -11623,7 +11631,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-slaughter/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "autotronic-ft": {
@@ -17429,6 +17437,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 860.76
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 860.76
         }
       ],
       "csmarketcap": {
@@ -17436,7 +17448,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-autotronic/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "tiger-tooth-fn": {
@@ -23242,6 +23254,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1049.19
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1049.19
         }
       ],
       "csmarketcap": {
@@ -23249,7 +23265,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-tiger-tooth/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "gamma-doppler-p4-mw": {
@@ -29055,6 +29071,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 2263.28
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 2263.28
         }
       ],
       "csmarketcap": {
@@ -29062,7 +29082,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-gamma-doppler-phase-4/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "gamma-doppler-p4-fn": {
@@ -34868,6 +34888,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1893.84
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1893.84
         }
       ],
       "csmarketcap": {
@@ -34875,7 +34899,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-gamma-doppler-phase-4/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "gamma-doppler-p3-fn": {
@@ -40681,6 +40705,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1893.92
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1893.92
         }
       ],
       "csmarketcap": {
@@ -40688,7 +40716,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-gamma-doppler-phase-3/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "gamma-doppler-p1-fn": {
@@ -46494,6 +46522,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1947.6
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1947.6
         }
       ],
       "csmarketcap": {
@@ -46501,7 +46533,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-gamma-doppler-phase-1/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "doppler-p3-fn": {
@@ -52307,6 +52339,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 2118.92
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 2118.92
         }
       ],
       "csmarketcap": {
@@ -52314,7 +52350,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-doppler-phase-3/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "fade-fn": {
@@ -58120,6 +58156,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 2350.61
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 2350.61
         }
       ],
       "csmarketcap": {
@@ -58127,7 +58167,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-fade/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-phase-1-fn": {
@@ -63745,6 +63785,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 572.15
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 572.15
         }
       ],
       "csmarketcap": {
@@ -63752,7 +63796,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-doppler-phase-1/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-phase-1-mw": {
@@ -69370,6 +69414,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 685.29
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 685.29
         }
       ],
       "csmarketcap": {
@@ -69377,7 +69425,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-doppler-phase-1/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-phase-2-fn": {
@@ -74995,6 +75043,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 743.3
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 743.3
         }
       ],
       "csmarketcap": {
@@ -75002,7 +75054,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-doppler-phase-2/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-phase-2-mw": {
@@ -80620,6 +80672,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1012.79
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1012.79
         }
       ],
       "csmarketcap": {
@@ -80627,7 +80683,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-doppler-phase-2/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-phase-3-fn": {
@@ -86245,6 +86301,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 565.74
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 565.74
         }
       ],
       "csmarketcap": {
@@ -86252,7 +86312,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-doppler-phase-3/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-phase-3-mw": {
@@ -91870,6 +91930,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 747.08
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 747.08
         }
       ],
       "csmarketcap": {
@@ -91877,7 +91941,7 @@
         "min_market": "skinout",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-doppler-phase-3/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-phase-4-fn": {
@@ -97495,6 +97559,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 676.77
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 676.77
         }
       ],
       "csmarketcap": {
@@ -97502,7 +97570,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-doppler-phase-4/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-sapphire-fn": {
@@ -103120,6 +103188,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1495.82
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1495.82
         }
       ],
       "csmarketcap": {
@@ -103127,7 +103199,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-doppler-sapphire/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-fade-fn": {
@@ -108745,6 +108817,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 534.21
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 534.21
         }
       ],
       "csmarketcap": {
@@ -108752,7 +108828,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-fade/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-fade-mw": {
@@ -114370,6 +114446,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 588.4
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 588.4
         }
       ],
       "csmarketcap": {
@@ -114377,7 +114457,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-fade/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-marble-fade-fn": {
@@ -119995,6 +120075,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 390.94
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 390.94
         }
       ],
       "csmarketcap": {
@@ -120002,7 +120086,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-marble-fade/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-marble-fade-mw": {
@@ -125620,6 +125704,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 454.87
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 454.87
         }
       ],
       "csmarketcap": {
@@ -125627,7 +125715,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-marble-fade/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-slaughter-fn": {
@@ -131245,6 +131333,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 451.12
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 451.12
         }
       ],
       "csmarketcap": {
@@ -131252,7 +131344,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-slaughter/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-slaughter-ft": {
@@ -136870,6 +136962,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 395.94
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 395.94
         }
       ],
       "csmarketcap": {
@@ -136877,7 +136973,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-slaughter/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-slaughter-mw": {
@@ -142495,6 +142591,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 398.87
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 398.87
         }
       ],
       "csmarketcap": {
@@ -142502,7 +142602,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-slaughter/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-tiger-tooth-fn": {
@@ -148120,6 +148220,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 327.18
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 315.39
         }
       ],
       "csmarketcap": {
@@ -148127,7 +148231,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-tiger-tooth/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-tiger-tooth-mw": {
@@ -153745,6 +153849,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 359.35
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 359.35
         }
       ],
       "csmarketcap": {
@@ -153752,7 +153860,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/skeleton-knife-tiger-tooth/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-phase-1-st-fn": {
@@ -159370,6 +159478,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 613.47
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 613.47
         }
       ],
       "csmarketcap": {
@@ -159377,7 +159489,7 @@
         "min_market": "skinland",
         "lis_cheapest": true,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-doppler-phase-1/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-phase-2-st-fn": {
@@ -164995,6 +165107,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1031.69
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1031.69
         }
       ],
       "csmarketcap": {
@@ -165002,7 +165118,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-doppler-phase-2/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-phase-3-st-fn": {
@@ -170620,6 +170736,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 685.23
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 685.23
         }
       ],
       "csmarketcap": {
@@ -170627,7 +170747,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-doppler-phase-3/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-phase-4-st-fn": {
@@ -176245,6 +176365,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 810
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 810
         }
       ],
       "csmarketcap": {
@@ -176252,7 +176376,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-doppler-phase-4/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-phase-4-st-mw": {
@@ -181870,6 +181994,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1075.04
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1075.04
         }
       ],
       "csmarketcap": {
@@ -181877,7 +182005,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-doppler-phase-4/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-doppler-sapphire-st-fn": {
@@ -187495,6 +187623,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1227.95
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1227.95
         }
       ],
       "csmarketcap": {
@@ -187502,7 +187634,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-doppler-sapphire/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-fade-st-fn": {
@@ -193120,6 +193252,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 521
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 521
         }
       ],
       "csmarketcap": {
@@ -193127,7 +193263,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-fade/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-fade-st-mw": {
@@ -198745,6 +198881,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 689.76
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 689.76
         }
       ],
       "csmarketcap": {
@@ -198752,7 +198892,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-fade/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-marble-fade-st-fn": {
@@ -204370,6 +204510,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 387.26
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 387.26
         }
       ],
       "csmarketcap": {
@@ -204377,7 +204521,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-marble-fade/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-marble-fade-st-mw": {
@@ -209995,6 +210139,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 565.94
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 565.94
         }
       ],
       "csmarketcap": {
@@ -210002,7 +210150,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-marble-fade/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-slaughter-st-fn": {
@@ -215620,6 +215768,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 518.99
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 518.99
         }
       ],
       "csmarketcap": {
@@ -215627,7 +215779,7 @@
         "min_market": "csmoney",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-slaughter/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-slaughter-st-ft": {
@@ -221237,6 +221389,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 519.81
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 519.81
         }
       ],
       "csmarketcap": {
@@ -221244,7 +221400,7 @@
         "min_market": "ecosteam",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-slaughter/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-slaughter-st-mw": {
@@ -226862,14 +227018,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 426.15
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 426.15
         }
       ],
       "csmarketcap": {
-        "min_price": 378.64,
+        "min_price": 378.63,
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-slaughter/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-tiger-tooth-st-fn": {
@@ -232487,6 +232647,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 353.14
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 353.2
         }
       ],
       "csmarketcap": {
@@ -232494,7 +232658,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-skeleton-knife-tiger-tooth/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "skeleton-knife-tiger-tooth-st-mw": {
@@ -243685,6 +243849,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 502
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 502
         }
       ],
       "csmarketcap": {
@@ -243692,7 +243860,7 @@
         "min_market": "skinvault",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-doppler-phase-1/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-phase-2-st-fn": {
@@ -249310,6 +249478,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 668.17
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 668.17
         }
       ],
       "csmarketcap": {
@@ -249317,7 +249489,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-doppler-phase-2/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-phase-3-st-fn": {
@@ -254935,6 +255107,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 536.41
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 520.94
         }
       ],
       "csmarketcap": {
@@ -254942,7 +255118,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-doppler-phase-3/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-phase-3-st-mw": {
@@ -260468,6 +260644,10 @@
         {
           "t": "2026-09-11T23:27:27Z",
           "price": 696.93
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 696.93
         }
       ],
       "csmarketcap": {
@@ -260475,7 +260655,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-doppler-phase-3/minimal-wear",
-        "checked_at": "2026-09-11T23:15:32Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-phase-4-st-fn": {
@@ -266093,6 +266273,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 514.43
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 514.43
         }
       ],
       "csmarketcap": {
@@ -266100,7 +266284,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-doppler-phase-4/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-sapphire-st-fn": {
@@ -271718,6 +271902,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1042.87
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1042.87
         }
       ],
       "csmarketcap": {
@@ -271725,7 +271913,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-doppler-sapphire/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-fade-st-fn": {
@@ -277343,6 +277531,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 420.01
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 420.01
         }
       ],
       "csmarketcap": {
@@ -277350,7 +277542,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-fade/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-fade-st-mw": {
@@ -282704,14 +282896,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 737.31
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 737.31
         }
       ],
       "csmarketcap": {
         "min_price": 700.0,
-        "min_market": "shadowpay",
+        "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-fade/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-marble-fade-st-fn": {
@@ -288329,6 +288525,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 317.7
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 317.7
         }
       ],
       "csmarketcap": {
@@ -288336,7 +288536,7 @@
         "min_market": "aim-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-marble-fade/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-marble-fade-st-mw": {
@@ -297463,6 +297663,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 479.9
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 479.95
         }
       ],
       "csmarketcap": {
@@ -297470,7 +297674,7 @@
         "min_market": "csmoney",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-slaughter/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-slaughter-st-ft": {
@@ -303060,14 +303264,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 446.37
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 446.37
         }
       ],
       "csmarketcap": {
-        "min_price": 372.66,
+        "min_price": 372.65,
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-slaughter/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-slaughter-st-mw": {
@@ -308685,6 +308893,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 449.26
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 449.26
         }
       ],
       "csmarketcap": {
@@ -308692,7 +308904,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-slaughter/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-tiger-tooth-st-fn": {
@@ -314310,6 +314522,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 305.8
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 305.8
         }
       ],
       "csmarketcap": {
@@ -314317,7 +314533,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-tiger-tooth/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-tiger-tooth-st-mw": {
@@ -319935,6 +320151,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 455.45
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 455.49
         }
       ],
       "csmarketcap": {
@@ -319942,7 +320162,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-stiletto-knife-tiger-tooth/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-phase-1-fn": {
@@ -325560,6 +325780,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 497.16
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 497.16
         }
       ],
       "csmarketcap": {
@@ -325567,7 +325791,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-doppler-phase-1/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-phase-1-mw": {
@@ -331185,6 +331409,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 673.11
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 673.03
         }
       ],
       "csmarketcap": {
@@ -331192,7 +331420,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-doppler-phase-1/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-phase-2-fn": {
@@ -336810,6 +337038,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 662.74
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 647.68
         }
       ],
       "csmarketcap": {
@@ -336817,7 +337049,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-doppler-phase-2/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-phase-2-mw": {
@@ -342435,6 +342667,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 831.31
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 831.31
         }
       ],
       "csmarketcap": {
@@ -342442,7 +342678,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-doppler-phase-2/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-phase-3-fn": {
@@ -348060,14 +348296,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 483.33
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 465.91
         }
       ],
       "csmarketcap": {
-        "min_price": 426.73,
-        "min_market": "skinswap",
+        "min_price": 437.17,
+        "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-doppler-phase-3/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-phase-3-mw": {
@@ -353685,6 +353925,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 636.77
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 636.77
         }
       ],
       "csmarketcap": {
@@ -353692,7 +353936,7 @@
         "min_market": "csmoney",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-doppler-phase-3/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-phase-4-fn": {
@@ -359310,6 +359554,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 496.96
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 496.96
         }
       ],
       "csmarketcap": {
@@ -359317,7 +359565,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-doppler-phase-4/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-phase-4-mw": {
@@ -364935,6 +365183,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 622.4
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 622.4
         }
       ],
       "csmarketcap": {
@@ -364942,7 +365194,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-doppler-phase-4/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-doppler-sapphire-fn": {
@@ -370560,6 +370812,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1006.35
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1006.35
         }
       ],
       "csmarketcap": {
@@ -370567,7 +370823,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-doppler-sapphire/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-fade-fn": {
@@ -376185,6 +376441,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 396.11
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 396.11
         }
       ],
       "csmarketcap": {
@@ -376192,7 +376452,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-fade/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-fade-mw": {
@@ -381810,6 +382070,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 481.55
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 481.55
         }
       ],
       "csmarketcap": {
@@ -381817,7 +382081,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-fade/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-marble-fade-fn": {
@@ -387435,14 +387699,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 306.56
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 306.56
         }
       ],
       "csmarketcap": {
-        "min_price": 284.933,
-        "min_market": "skinout",
+        "min_price": 285.77,
+        "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-marble-fade/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-marble-fade-mw": {
@@ -393060,6 +393328,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 386.97
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 386.97
         }
       ],
       "csmarketcap": {
@@ -393067,7 +393339,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-marble-fade/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-slaughter-fn": {
@@ -398685,6 +398957,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 418.84
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 418.84
         }
       ],
       "csmarketcap": {
@@ -398692,7 +398968,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-slaughter/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-slaughter-ft": {
@@ -404310,6 +404586,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 378.32
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 371.61
         }
       ],
       "csmarketcap": {
@@ -404317,7 +404597,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-slaughter/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-slaughter-mw": {
@@ -409935,6 +410215,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 380.79
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 380.79
         }
       ],
       "csmarketcap": {
@@ -409942,7 +410226,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-slaughter/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-tiger-tooth-fn": {
@@ -415560,14 +415844,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 287.95
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 278.19
         }
       ],
       "csmarketcap": {
-        "min_price": 251.44,
-        "min_market": "skinswap",
+        "min_price": 261.41,
+        "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-tiger-tooth/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stiletto-knife-tiger-tooth-mw": {
@@ -421185,6 +421473,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 312.88
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 312.88
         }
       ],
       "csmarketcap": {
@@ -421192,7 +421484,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stiletto-knife-tiger-tooth/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-doppler-phase-1-fn": {
@@ -426810,6 +427102,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1283.15
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1283.15
         }
       ],
       "csmarketcap": {
@@ -426817,7 +427113,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-doppler-phase-1/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-doppler-phase-3-fn": {
@@ -432435,6 +432731,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1282.31
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1282.31
         }
       ],
       "csmarketcap": {
@@ -432442,7 +432742,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-doppler-phase-3/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-doppler-phase-3-mw": {
@@ -438060,6 +438360,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1446.82
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1446.82
         }
       ],
       "csmarketcap": {
@@ -438067,7 +438371,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-doppler-phase-3/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-doppler-phase-4-fn": {
@@ -443685,6 +443989,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1292.58
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1292.58
         }
       ],
       "csmarketcap": {
@@ -443692,7 +444000,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-doppler-phase-4/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-doppler-phase-4-mw": {
@@ -449310,6 +449618,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1380.22
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1380.35
         }
       ],
       "csmarketcap": {
@@ -449317,7 +449629,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-doppler-phase-4/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-marble-fade-fn": {
@@ -454935,6 +455247,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1049.28
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1049.28
         }
       ],
       "csmarketcap": {
@@ -454942,7 +455258,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-marble-fade/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-marble-fade-mw": {
@@ -460560,6 +460876,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1191.7
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1191.7
         }
       ],
       "csmarketcap": {
@@ -460567,7 +460887,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-marble-fade/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-slaughter-fn": {
@@ -466185,14 +466505,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1087.9
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1087.9
         }
       ],
       "csmarketcap": {
-        "min_price": 1066.16,
-        "min_market": "skinswap",
+        "min_price": 1081.47,
+        "min_market": "skinport",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-slaughter/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-slaughter-ft": {
@@ -471810,6 +472134,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 816.92
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 816.92
         }
       ],
       "csmarketcap": {
@@ -471817,7 +472145,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-slaughter/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-slaughter-mw": {
@@ -477435,6 +477763,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 981.63
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 981.63
         }
       ],
       "csmarketcap": {
@@ -477442,7 +477774,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-slaughter/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-tiger-tooth-fn": {
@@ -483060,14 +483392,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 836.7
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 836.7
         }
       ],
       "csmarketcap": {
-        "min_price": 830.6,
-        "min_market": "csfloat",
+        "min_price": 819.97,
+        "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-tiger-tooth/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-tiger-tooth-mw": {
@@ -488685,6 +489021,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 963.16
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 963.16
         }
       ],
       "csmarketcap": {
@@ -488692,7 +489032,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-tiger-tooth/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-doppler-phase-1-st-fn": {
@@ -494310,6 +494650,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1302.61
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1302.61
         }
       ],
       "csmarketcap": {
@@ -494317,7 +494661,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-karambit-doppler-phase-1/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-doppler-phase-3-st-fn": {
@@ -499935,6 +500279,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1333.53
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1333.53
         }
       ],
       "csmarketcap": {
@@ -499942,7 +500290,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-karambit-doppler-phase-3/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-marble-fade-st-fn": {
@@ -505560,6 +505908,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1145.24
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1145.24
         }
       ],
       "csmarketcap": {
@@ -505567,7 +505919,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-karambit-marble-fade/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-slaughter-st-fn": {
@@ -511185,6 +511537,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1313.57
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1313.57
         }
       ],
       "csmarketcap": {
@@ -511192,7 +511548,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-karambit-slaughter/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-slaughter-st-ft": {
@@ -516810,6 +517166,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1605.66
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1605.66
         }
       ],
       "csmarketcap": {
@@ -516817,7 +517177,7 @@
         "min_market": "rapidskins",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-karambit-slaughter/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-slaughter-st-mw": {
@@ -522435,6 +522795,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 1090.88
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 1090.88
         }
       ],
       "csmarketcap": {
@@ -522442,7 +522806,7 @@
         "min_market": "buff-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-karambit-slaughter/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "karambit-tiger-tooth-st-fn": {
@@ -528060,6 +528424,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 858.98
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 858.98
         }
       ],
       "csmarketcap": {
@@ -528067,7 +528435,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-karambit-tiger-tooth/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "butterfly-knife-freehand-bs": {
@@ -532265,6 +532633,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 559.49
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 559.49
         }
       ],
       "csmarketcap": {
@@ -532272,7 +532644,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-freehand/battle-scarred",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "butterfly-knife-freehand-fn": {
@@ -536470,6 +536842,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 658.17
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 658.17
         }
       ],
       "csmarketcap": {
@@ -536477,7 +536853,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-freehand/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "butterfly-knife-freehand-ft": {
@@ -540675,6 +541051,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 595.63
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 595.63
         }
       ],
       "csmarketcap": {
@@ -540682,7 +541062,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-freehand/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "butterfly-knife-freehand-mw": {
@@ -544880,6 +545260,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 654.26
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 654.26
         }
       ],
       "csmarketcap": {
@@ -544887,7 +545271,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-freehand/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "butterfly-knife-freehand-ww": {
@@ -549085,6 +549469,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 577.88
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 577.88
         }
       ],
       "csmarketcap": {
@@ -549092,7 +549480,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-freehand/well-worn",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stattrak-butterfly-knife-freehand-fn": {
@@ -553290,6 +553678,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 770.55
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 770.55
         }
       ],
       "csmarketcap": {
@@ -553297,7 +553689,7 @@
         "min_market": "skinport",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-butterfly-knife-freehand/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stattrak-butterfly-knife-freehand-ft": {
@@ -557495,6 +557887,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 617.94
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 617.94
         }
       ],
       "csmarketcap": {
@@ -557502,7 +557898,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-butterfly-knife-freehand/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stattrak-butterfly-knife-freehand-mw": {
@@ -561700,6 +562096,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 704.9
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 704.9
         }
       ],
       "csmarketcap": {
@@ -561707,7 +562107,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-butterfly-knife-freehand/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "stattrak-butterfly-knife-freehand-ww": {
@@ -565905,6 +566305,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 630.94
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 630.94
         }
       ],
       "csmarketcap": {
@@ -565912,7 +566316,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/stattrak-butterfly-knife-freehand/well-worn",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-asiimov-ft": {
@@ -570110,6 +570514,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 111.25
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 111.25
         }
       ],
       "csmarketcap": {
@@ -570117,7 +570525,7 @@
         "min_market": "aim-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-asiimov/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-atheris-fn": {
@@ -574315,6 +574723,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 41.84
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 41.84
         }
       ],
       "csmarketcap": {
@@ -574322,7 +574734,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-atheris/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-boom-fn": {
@@ -578520,14 +578932,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 391.45
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 391.45
         }
       ],
       "csmarketcap": {
-        "min_price": 338.88,
-        "min_market": "skinport",
+        "min_price": 354.69,
+        "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-boom/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-boom-ft": {
@@ -582725,6 +583141,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 95.55
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 95.55
         }
       ],
       "csmarketcap": {
@@ -582732,7 +583152,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-boom/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-boom-mw": {
@@ -586930,6 +587350,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 126.17
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 126.17
         }
       ],
       "csmarketcap": {
@@ -586937,7 +587361,7 @@
         "min_market": "aim-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-boom/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-black-box-fn": {
@@ -591135,6 +591559,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 26.63
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 26.63
         }
       ],
       "csmarketcap": {
@@ -591142,7 +591570,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-black-box/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-cmyk-ft": {
@@ -595340,6 +595768,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 165.88
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 165.88
         }
       ],
       "csmarketcap": {
@@ -595347,7 +595779,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-cmyk/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-cmyk-mw": {
@@ -599545,6 +599977,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 264.73
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 264.73
         }
       ],
       "csmarketcap": {
@@ -599552,7 +599988,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-cmyk/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-chromatic-aberration-fn": {
@@ -603750,6 +604186,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 71.29
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 71.29
         }
       ],
       "csmarketcap": {
@@ -603757,7 +604197,7 @@
         "min_market": "skinflow",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-chromatic-aberration/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-chromatic-aberration-ft": {
@@ -607955,6 +608395,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 33.74
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 32.56
         }
       ],
       "csmarketcap": {
@@ -607962,7 +608406,7 @@
         "min_market": "tradeit",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-chromatic-aberration/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-chromatic-aberration-mw": {
@@ -612160,6 +612604,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 38.08
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 38.08
         }
       ],
       "csmarketcap": {
@@ -612167,7 +612615,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-chromatic-aberration/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-chrome-cannon-fn": {
@@ -616365,6 +616813,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 71.83
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 71.83
         }
       ],
       "csmarketcap": {
@@ -616372,7 +616824,7 @@
         "min_market": "tradeit",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-chrome-cannon/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-chrome-cannon-ft": {
@@ -620570,6 +621022,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 27.84
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 27.84
         }
       ],
       "csmarketcap": {
@@ -620577,7 +621033,7 @@
         "min_market": "csmoney",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-chrome-cannon/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-chrome-cannon-mw": {
@@ -624775,6 +625231,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 32.4
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 32.36
         }
       ],
       "csmarketcap": {
@@ -624782,7 +625242,7 @@
         "min_market": "csmoney",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-chrome-cannon/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-containment-breach-fn": {
@@ -628980,6 +629440,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 454.74
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 454.74
         }
       ],
       "csmarketcap": {
@@ -628987,7 +629451,7 @@
         "min_market": "skinflow",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-containment-breach/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-containment-breach-ft": {
@@ -633185,6 +633649,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 70.74
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 70.74
         }
       ],
       "csmarketcap": {
@@ -633192,7 +633660,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-containment-breach/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-containment-breach-mw": {
@@ -637390,6 +637858,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 133.83
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 133.83
         }
       ],
       "csmarketcap": {
@@ -637397,7 +637869,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-containment-breach/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-corticera-fn": {
@@ -641595,6 +642067,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 146.26
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 146.26
         }
       ],
       "csmarketcap": {
@@ -641602,7 +642078,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-corticera/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-crakow-fn": {
@@ -645800,6 +646276,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 86.13
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 86.41
         }
       ],
       "csmarketcap": {
@@ -645807,7 +646287,7 @@
         "min_market": "csmoney",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-crakow/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-crakow-mw": {
@@ -650005,14 +650485,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 41.09
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 41.09
         }
       ],
       "csmarketcap": {
-        "min_price": 39.38,
-        "min_market": "skinswap",
+        "min_price": 39.54,
+        "min_market": "skinflow",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-crakow/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-electric-hive-fn": {
@@ -654210,6 +654694,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 100.12
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 100.12
         }
       ],
       "csmarketcap": {
@@ -654217,7 +654705,7 @@
         "min_market": "rapidskins",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-electric-hive/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-electric-hive-mw": {
@@ -658415,6 +658903,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 30.32
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 30.32
         }
       ],
       "csmarketcap": {
@@ -658422,7 +658914,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-electric-hive/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-elite-build-fn": {
@@ -662620,6 +663112,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 81.44
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 81.44
         }
       ],
       "csmarketcap": {
@@ -662627,7 +663123,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-elite-build/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-exoskeleton-fn": {
@@ -666825,6 +667321,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 48.11
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 48.11
         }
       ],
       "csmarketcap": {
@@ -666832,7 +667332,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-exoskeleton/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-graphite-fn": {
@@ -671030,6 +671530,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 138.21
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 138.21
         }
       ],
       "csmarketcap": {
@@ -671037,7 +671541,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-graphite/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-graphite-mw": {
@@ -675235,6 +675739,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 134.45
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 134.45
         }
       ],
       "csmarketcap": {
@@ -675242,7 +675750,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-graphite/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-green-energy-fn": {
@@ -679440,6 +679948,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 35.47
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 35.47
         }
       ],
       "csmarketcap": {
@@ -679447,7 +679959,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-green-energy/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-hyper-beast-fn": {
@@ -683645,6 +684157,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 159.72
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 159.72
         }
       ],
       "csmarketcap": {
@@ -683652,7 +684168,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-hyper-beast/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-hyper-beast-ft": {
@@ -687850,6 +688366,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 33.78
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 33.78
         }
       ],
       "csmarketcap": {
@@ -687857,7 +688377,7 @@
         "min_market": "aim-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-hyper-beast/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-hyper-beast-mw": {
@@ -692055,6 +692575,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 49.17
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 49.17
         }
       ],
       "csmarketcap": {
@@ -692062,7 +692586,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-hyper-beast/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-ice-coaled-fn": {
@@ -696260,6 +696784,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 28.52
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 28.52
         }
       ],
       "csmarketcap": {
@@ -696267,7 +696795,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-ice-coaled/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-longdog-ft": {
@@ -700465,6 +700993,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 72.38
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 72.38
         }
       ],
       "csmarketcap": {
@@ -700472,7 +701004,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-longdog/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-longdog-mw": {
@@ -704670,14 +705202,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 149.26
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 149.26
         }
       ],
       "csmarketcap": {
-        "min_price": 138.64,
-        "min_market": "skinport",
+        "min_price": 140.82,
+        "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-longdog/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-man-o-war-ft": {
@@ -708875,6 +709411,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 131.22
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 128.01
         }
       ],
       "csmarketcap": {
@@ -708882,7 +709422,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-man-o-war/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-man-o-war-mw": {
@@ -713080,6 +713620,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 123.16
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 123.16
         }
       ],
       "csmarketcap": {
@@ -713087,7 +713631,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-man-o-war/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-neo-noir-fn": {
@@ -717285,6 +717829,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 51.96
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 51.96
         }
       ],
       "csmarketcap": {
@@ -717292,7 +717840,7 @@
         "min_market": "aim-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-neo-noir/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-neo-noir-ft": {
@@ -721490,6 +722038,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 37.4
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 37.4
         }
       ],
       "csmarketcap": {
@@ -721497,7 +722049,7 @@
         "min_market": "rapidskins",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-neo-noir/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-neo-noir-mw": {
@@ -725695,6 +726247,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 40.52
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 40.55
         }
       ],
       "csmarketcap": {
@@ -725702,7 +726258,7 @@
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-neo-noir/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-oni-taiji-ft": {
@@ -729900,6 +730456,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 261.9
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 261.9
         }
       ],
       "csmarketcap": {
@@ -729907,7 +730467,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-oni-taiji/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-oni-taiji-mw": {
@@ -734105,6 +734665,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 335.91
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 335.91
         }
       ],
       "csmarketcap": {
@@ -734112,7 +734676,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-oni-taiji/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-pop-awp-fn": {
@@ -738310,6 +738874,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 44.94
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 44.94
         }
       ],
       "csmarketcap": {
@@ -738317,7 +738885,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-pop-awp/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-pink-ddpat-fn": {
@@ -742515,6 +743083,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 148.95
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 148.95
         }
       ],
       "csmarketcap": {
@@ -742522,7 +743094,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-pink-ddpat/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-pink-ddpat-mw": {
@@ -746720,6 +747292,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 40.79
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 40.79
         }
       ],
       "csmarketcap": {
@@ -746727,7 +747303,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-pink-ddpat/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-printstream-fn": {
@@ -750925,6 +751501,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 167.23
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 167.23
         }
       ],
       "csmarketcap": {
@@ -750932,7 +751512,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-printstream/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-printstream-ft": {
@@ -755130,6 +755710,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 45.23
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 45.23
         }
       ],
       "csmarketcap": {
@@ -755137,7 +755721,7 @@
         "min_market": "aim-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-printstream/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-printstream-mw": {
@@ -759335,6 +759919,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 60.51
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 60.51
         }
       ],
       "csmarketcap": {
@@ -759342,7 +759930,7 @@
         "min_market": "rapidskins",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-printstream/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-queen-s-gambit-fn": {
@@ -763540,6 +764128,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 213.47
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 213.47
         }
       ],
       "csmarketcap": {
@@ -763547,7 +764139,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-queen-s-gambit/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-queen-s-gambit-ft": {
@@ -767745,6 +768337,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 48.69
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 48.69
         }
       ],
       "csmarketcap": {
@@ -767752,7 +768348,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-queen-s-gambit/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-queen-s-gambit-mw": {
@@ -771950,6 +772546,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 102.4
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 102.4
         }
       ],
       "csmarketcap": {
@@ -771957,7 +772557,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-queen-s-gambit/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-redline-ft": {
@@ -776155,6 +776755,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 32.5
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 32.5
         }
       ],
       "csmarketcap": {
@@ -776162,7 +776766,7 @@
         "min_market": "skinflow",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-redline/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-redline-mw": {
@@ -780360,6 +780964,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 61.28
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 61.28
         }
       ],
       "csmarketcap": {
@@ -780367,7 +780975,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-redline/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-silk-tiger-ft": {
@@ -784565,6 +785173,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 160.66
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 160.66
         }
       ],
       "csmarketcap": {
@@ -784572,7 +785184,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-silk-tiger/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-silk-tiger-mw": {
@@ -788770,6 +789382,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 315.11
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 315.11
         }
       ],
       "csmarketcap": {
@@ -788777,7 +789393,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-silk-tiger/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-snake-camo-fn": {
@@ -792975,6 +793591,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 362.92
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 362.92
         }
       ],
       "csmarketcap": {
@@ -792982,7 +793602,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-snake-camo/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-snake-camo-ft": {
@@ -797180,6 +797800,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 56.87
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 56.87
         }
       ],
       "csmarketcap": {
@@ -797187,7 +797811,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-snake-camo/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-snake-camo-mw": {
@@ -801385,6 +802009,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 88.4
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 88.4
         }
       ],
       "csmarketcap": {
@@ -801392,7 +802020,7 @@
         "min_market": "c5",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-snake-camo/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-sovereign-flame-ft": {
@@ -805590,14 +806218,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 122.63
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 122.63
         }
       ],
       "csmarketcap": {
-        "min_price": 114.38,
-        "min_market": "csfloat",
+        "min_price": 114.37,
+        "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-sovereign-flame/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-sovereign-flame-mw": {
@@ -809795,6 +810427,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 208.85
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 208.85
         }
       ],
       "csmarketcap": {
@@ -809802,7 +810438,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-sovereign-flame/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-sun-in-leo-fn": {
@@ -814000,6 +814636,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 87.59
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 87.59
         }
       ],
       "csmarketcap": {
@@ -814007,7 +814647,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-sun-in-leo/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-sun-in-leo-mw": {
@@ -818205,6 +818845,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 26.52
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 25.96
         }
       ],
       "csmarketcap": {
@@ -818212,7 +818856,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-sun-in-leo/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-the-end-fn": {
@@ -822410,6 +823054,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 52.75
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 52.75
         }
       ],
       "csmarketcap": {
@@ -822417,7 +823065,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-the-end/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-wildfire-fn": {
@@ -826615,6 +827263,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 153.54
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 153.54
         }
       ],
       "csmarketcap": {
@@ -826622,7 +827274,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-wildfire/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-wildfire-ft": {
@@ -830820,6 +831472,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 41
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 41
         }
       ],
       "csmarketcap": {
@@ -830827,7 +831483,7 @@
         "min_market": "aim-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-wildfire/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "awp-wildfire-mw": {
@@ -835025,6 +835681,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 64.4
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 64.4
         }
       ],
       "csmarketcap": {
@@ -835032,7 +835692,7 @@
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/awp-wildfire/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-aquamarine-revenge-fn": {
@@ -839230,6 +839890,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 184.06
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 184.06
         }
       ],
       "csmarketcap": {
@@ -839237,7 +839901,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-aquamarine-revenge/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-aquamarine-revenge-mw": {
@@ -843435,6 +844099,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 57.26
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 57
         }
       ],
       "csmarketcap": {
@@ -843442,7 +844110,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-aquamarine-revenge/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-b-the-monster-fn": {
@@ -847640,6 +848308,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 374.03
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 374.03
         }
       ],
       "csmarketcap": {
@@ -847647,7 +848319,7 @@
         "min_market": "rapidskins",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-b-the-monster/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-b-the-monster-ft": {
@@ -851845,14 +852517,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 89.21
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 89.21
         }
       ],
       "csmarketcap": {
-        "min_price": 81.57,
+        "min_price": 81.72,
         "min_market": "rapidskins",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-b-the-monster/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-b-the-monster-mw": {
@@ -856050,6 +856726,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 151.98
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 151.98
         }
       ],
       "csmarketcap": {
@@ -856057,7 +856737,7 @@
         "min_market": "skinflow",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-b-the-monster/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-bloodsport-fn": {
@@ -860255,6 +860935,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 162.72
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 162.72
         }
       ],
       "csmarketcap": {
@@ -860262,7 +860946,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-bloodsport/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-bloodsport-ft": {
@@ -864460,14 +865144,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 112.36
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 112.38
         }
       ],
       "csmarketcap": {
-        "min_price": 108.09,
+        "min_price": 109.66,
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-bloodsport/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-bloodsport-mw": {
@@ -868665,6 +869353,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 134.73
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 134.73
         }
       ],
       "csmarketcap": {
@@ -868672,7 +869364,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-bloodsport/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-inheritance-fn": {
@@ -872870,6 +873562,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 116.64
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 116.64
         }
       ],
       "csmarketcap": {
@@ -872877,7 +873573,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-inheritance/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-inheritance-mw": {
@@ -877075,6 +877771,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 53.75
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 53.75
         }
       ],
       "csmarketcap": {
@@ -877082,7 +877782,7 @@
         "min_market": "skinswap",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-inheritance/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-neon-rider-fn": {
@@ -881280,6 +881980,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 247.67
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 247.67
         }
       ],
       "csmarketcap": {
@@ -881287,7 +881991,7 @@
         "min_market": "aim-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-neon-rider/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-neon-rider-ft": {
@@ -885485,6 +886189,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 40.31
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 40.31
         }
       ],
       "csmarketcap": {
@@ -885492,7 +886200,7 @@
         "min_market": "aim-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-neon-rider/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-neon-rider-mw": {
@@ -889690,6 +890398,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 65.17
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 65.19
         }
       ],
       "csmarketcap": {
@@ -889697,7 +890409,7 @@
         "min_market": "aim-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-neon-rider/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-point-disarray-fn": {
@@ -893895,6 +894607,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 68.98
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 68.98
         }
       ],
       "csmarketcap": {
@@ -893902,7 +894618,7 @@
         "min_market": "skinport",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-point-disarray/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-the-empress-fn": {
@@ -898100,6 +898816,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 252.42
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 252.42
         }
       ],
       "csmarketcap": {
@@ -898107,7 +898827,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-the-empress/factory-new",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-the-empress-ft": {
@@ -902305,6 +903025,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 111.13
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 111.13
         }
       ],
       "csmarketcap": {
@@ -902312,7 +903036,7 @@
         "min_market": "tradeit",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-the-empress/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-the-empress-mw": {
@@ -906510,14 +907234,18 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 112.13
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 111.38
         }
       ],
       "csmarketcap": {
-        "min_price": 102.28,
-        "min_market": "skinswap",
+        "min_price": 102.93,
+        "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-the-empress/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-vulcan-ft": {
@@ -910715,6 +911443,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 176.67
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 176.67
         }
       ],
       "csmarketcap": {
@@ -910722,7 +911454,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-vulcan/field-tested",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     },
     "ak-47-vulcan-mw": {
@@ -914920,6 +915652,10 @@
         {
           "t": "2026-09-11T23:42:27Z",
           "price": 369.44
+        },
+        {
+          "t": "2026-09-11T23:45:48Z",
+          "price": 369.44
         }
       ],
       "csmarketcap": {
@@ -914927,7 +915663,7 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-vulcan/minimal-wear",
-        "checked_at": "2026-09-11T23:30:40Z"
+        "checked_at": "2026-09-11T23:45:48Z"
       }
     }
   },
@@ -920724,8 +921460,12 @@
       {
         "t": "2026-09-11T23:42:27Z",
         "rate": 84.2569
+      },
+      {
+        "t": "2026-09-11T23:45:48Z",
+        "rate": 84.2569
       }
     ]
   },
-  "last_updated": "2026-09-11T23:42:27Z"
+  "last_updated": "2026-09-11T23:45:48Z"
 }

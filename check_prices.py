@@ -32,6 +32,7 @@ WEAR_SLUGS = {
 # slug -> exact item name as it appears in the lis-skins JSON feed
 ITEMS = {
     # Butterfly Knife
+    "slaughter-ft": "★ Butterfly Knife | Slaughter (Field-Tested)",
     "slaughter-mw": "★ Butterfly Knife | Slaughter (Minimal Wear)",
     "slaughter-fn": "★ Butterfly Knife | Slaughter (Factory New)",
     "autotronic-ft": "★ Butterfly Knife | Autotronic (Field-Tested)",
@@ -55,23 +56,10 @@ ITEMS = {
     "karambit-slaughter-mw": "★ Karambit | Slaughter (Minimal Wear)",
     "karambit-tiger-tooth-fn": "★ Karambit | Tiger Tooth (Factory New)",
     "karambit-tiger-tooth-mw": "★ Karambit | Tiger Tooth (Minimal Wear)",
-    "karambit-doppler-phase-1-st-fn": "★ StatTrak™ Karambit | Doppler Phase 1 (Factory New)",
-    "karambit-doppler-phase-3-st-fn": "★ StatTrak™ Karambit | Doppler Phase 3 (Factory New)",
-    "karambit-marble-fade-st-fn": "★ StatTrak™ Karambit | Marble Fade (Factory New)",
-    "karambit-slaughter-st-fn": "★ StatTrak™ Karambit | Slaughter (Factory New)",
-    "karambit-slaughter-st-ft": "★ StatTrak™ Karambit | Slaughter (Field-Tested)",
-    "karambit-slaughter-st-mw": "★ StatTrak™ Karambit | Slaughter (Minimal Wear)",
-    "karambit-tiger-tooth-st-fn": "★ StatTrak™ Karambit | Tiger Tooth (Factory New)",
     # Butterfly Knife | Freehand
-    "butterfly-knife-freehand-bs": "★ Butterfly Knife | Freehand (Battle-Scarred)",
     "butterfly-knife-freehand-fn": "★ Butterfly Knife | Freehand (Factory New)",
     "butterfly-knife-freehand-ft": "★ Butterfly Knife | Freehand (Field-Tested)",
     "butterfly-knife-freehand-mw": "★ Butterfly Knife | Freehand (Minimal Wear)",
-    "butterfly-knife-freehand-ww": "★ Butterfly Knife | Freehand (Well-Worn)",
-    "stattrak-butterfly-knife-freehand-fn": "★ StatTrak™ Butterfly Knife | Freehand (Factory New)",
-    "stattrak-butterfly-knife-freehand-ft": "★ StatTrak™ Butterfly Knife | Freehand (Field-Tested)",
-    "stattrak-butterfly-knife-freehand-mw": "★ StatTrak™ Butterfly Knife | Freehand (Minimal Wear)",
-    "stattrak-butterfly-knife-freehand-ww": "★ StatTrak™ Butterfly Knife | Freehand (Well-Worn)",
     # AK-47 (selected skins, 3000-40000₽, FN/MW/FT, no StatTrak)
     "ak-47-aquamarine-revenge-fn": "AK-47 | Aquamarine Revenge (Factory New)",
     "ak-47-aquamarine-revenge-mw": "AK-47 | Aquamarine Revenge (Minimal Wear)",
@@ -204,6 +192,7 @@ def main():
 
     data = load_data()
     data.setdefault("items", {})
+    data["items"] = {slug: item for slug, item in data["items"].items() if slug in ITEMS}
     data.setdefault("usd_rub", {"history": []})
 
     try:

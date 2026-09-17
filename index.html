@@ -226,6 +226,7 @@ let SELECTED = null;
 let detailChart = null;
 let LAST_UPDATED = null;
 let LATEST_RATE = null;
+let SORT_MODE = 'minimum';
 let FILTER_KNIFE = 'all';
 let FILTER_SKIN = 'all';
 let SEARCH_QUERY = '';
@@ -358,6 +359,17 @@ function renderFilters() {
     renderGrid(LATEST_RATE);
   }));
 
+  const sort = document.createElement('select');
+  sort.setAttribute('aria-label', 'Сортировка');
+  for (const [value, label] of [['minimum', 'Ближе к историческому минимуму'], ['csmarketcap', 'Дешевле относительно CSMarketCap']]) {
+    const option = document.createElement('option');
+    option.value = value; option.textContent = label;
+    sort.appendChild(option);
+  }
+  sort.value = SORT_MODE;
+  sort.onchange = () => { SORT_MODE = sort.value; renderGrid(LATEST_RATE); };
+  bar.appendChild(sort);
+
   const search = document.createElement('input');
   search.type = 'search';
   search.placeholder = 'Поиск по названию…';
@@ -489,6 +501,24 @@ function dropRank(entry) {
   return 1000; // baseline — not enough history to rank yet
 }
 
+// Negative means lis-skins is cheaper than the saved competing-market minimum.
+function marketDifference(entry) {
+  const price = entry.history.length ? entry.valueOf(entry.history[entry.history.length - 1]) : null;
+  const reference = entry.csmarketcap?.min_price;
+  return Number.isFinite(price) && price > 0 && Number.isFinite(reference) && reference > 0
+    ? (price / reference - 1) * 100 : null;
+}
+
+function compareCards(a, b) {
+  if (a.isRate || b.isRate) return Number(!!b.isRate) - Number(!!a.isRate);
+  if (SORT_MODE === 'csmarketcap') {
+    const x = marketDifference(a), y = marketDifference(b);
+    if (x === null || y === null) return x === y ? a.name.localeCompare(b.name) : x === null ? 1 : -1;
+    return x - y || a.name.localeCompare(b.name);
+  }
+  return dropRank(a) - dropRank(b);
+}
+
 function renderGrid(latestRate) {
   const content = document.getElementById('content');
   content.innerHTML = '';
@@ -503,6 +533,7 @@ function renderGrid(latestRate) {
      (FILTER_SKIN === 'all' || e.skinGroup === FILTER_SKIN) &&
      (!query || e.name.toLowerCase().includes(query)))
   );
+  visible.sort(compareCards);
   visible.forEach(entry => grid.appendChild(renderCard(entry, latestRate)));
 }
 
@@ -564,6 +595,9 @@ function renderCard(entry, latestRate) {
     const cs = document.createElement('div');
     cs.className = 'csmc-row';
     cs.textContent = `CSMarketCap мин.: ${fmtUsd(entry.csmarketcap.min_price)} (${entry.csmarketcap.min_market})`;
+    const difference = marketDifference(entry);
+    if (difference !== null) cs.textContent += ` · ${difference > 0 ? '+' : ''}${difference.toFixed(2)}% к CSMarketCap`;
+    if (entry.csmarketcap.checked_at) cs.title = 'Сравнение с сохранённой ценой от ' + fmtDate(entry.csmarketcap.checked_at);
     card.appendChild(cs);
   }
 

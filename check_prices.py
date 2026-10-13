@@ -39,6 +39,8 @@ ITEMS = {
     "tiger-tooth-fn": "★ Butterfly Knife | Tiger Tooth (Factory New)",
     "gamma-doppler-p4-mw": "★ Butterfly Knife | Gamma Doppler Phase 4 (Minimal Wear)",
     "gamma-doppler-p4-fn": "★ Butterfly Knife | Gamma Doppler Phase 4 (Factory New)",
+    "gamma-doppler-p2-mw": "★ Butterfly Knife | Gamma Doppler Phase 2 (Minimal Wear)",
+    "gamma-doppler-p2-fn": "★ Butterfly Knife | Gamma Doppler Phase 2 (Factory New)",
     "gamma-doppler-p3-fn": "★ Butterfly Knife | Gamma Doppler Phase 3 (Factory New)",
     "gamma-doppler-p1-fn": "★ Butterfly Knife | Gamma Doppler Phase 1 (Factory New)",
     "doppler-p3-fn": "★ Butterfly Knife | Doppler Phase 3 (Factory New)",

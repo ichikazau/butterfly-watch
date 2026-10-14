@@ -1,29 +1,26 @@
-name: Identify additional Telegram recipient
+name: Verify additional Telegram recipient
 on:
   workflow_dispatch: {}
 permissions:
   contents: read
 jobs:
-  discover:
+  verify:
     runs-on: ubuntu-latest
     steps:
-      - name: Identify recent private chats
+      - name: Send subscription confirmation
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_EXTRA_CHAT_IDS: ${{ secrets.TELEGRAM_EXTRA_CHAT_IDS }}
         run: |
           python - <<'PY'
-          import os,json,urllib.request,time
-          req=urllib.request.Request('https://api.telegram.org/bot'+os.environ['TELEGRAM_BOT_TOKEN']+'/getUpdates',data=b'{"limit":100,"timeout":0}',headers={'Content-Type':'application/json'})
+          import os,json,urllib.request
+          payload=json.dumps({'chat_id':os.environ['TELEGRAM_EXTRA_CHAT_IDS'],'text':'Butterfly Watch: уведомления подключены. Вы будете получать те же сигналы по ценам, что и основной получатель. Это тестовое сообщение.'}).encode()
+          req=urllib.request.Request('https://api.telegram.org/bot'+os.environ['TELEGRAM_BOT_TOKEN']+'/sendMessage',data=payload,headers={'Content-Type':'application/json'})
           try:
-              with urllib.request.urlopen(req,timeout=25) as r: data=json.load(r)
+              with urllib.request.urlopen(req,timeout=25) as r: result=json.load(r)
           except Exception as e:
-              print('Lookup failed:',type(e).__name__)
+              print('Delivery failed:',type(e).__name__)
               raise SystemExit(1)
-          chats={}
-          for u in data.get('result',[]):
-              m=u.get('message',{}); c=m.get('chat',{})
-              if c.get('type')=='private' and str(c.get('id'))!=os.environ['TELEGRAM_CHAT_ID'].strip():
-                  chats[str(c['id'])]={'id':str(c['id']),'username':c.get('username'),'first_name':c.get('first_name'),'date':m.get('date')}
-          print('RECIPIENT_CANDIDATES='+json.dumps(list(chats.values()),ensure_ascii=True))
+          if not result.get('ok'): raise SystemExit('Telegram rejected message')
+          print('Additional recipient delivery confirmed')
           PY

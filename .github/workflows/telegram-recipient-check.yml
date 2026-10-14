@@ -1,0 +1,29 @@
+name: Identify additional Telegram recipient
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Identify recent private chats
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'PY'
+          import os,json,urllib.request,time
+          req=urllib.request.Request('https://api.telegram.org/bot'+os.environ['TELEGRAM_BOT_TOKEN']+'/getUpdates',data=b'{"limit":100,"timeout":0}',headers={'Content-Type':'application/json'})
+          try:
+              with urllib.request.urlopen(req,timeout=25) as r: data=json.load(r)
+          except Exception as e:
+              print('Lookup failed:',type(e).__name__)
+              raise SystemExit(1)
+          chats={}
+          for u in data.get('result',[]):
+              m=u.get('message',{}); c=m.get('chat',{})
+              if c.get('type')=='private' and str(c.get('id'))!=os.environ['TELEGRAM_CHAT_ID'].strip():
+                  chats[str(c['id'])]={'id':str(c['id']),'username':c.get('username'),'first_name':c.get('first_name'),'date':m.get('date')}
+          print('RECIPIENT_CANDIDATES='+json.dumps(list(chats.values()),ensure_ascii=True))
+          PY

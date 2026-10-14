@@ -31,6 +31,14 @@ WEAR_SLUGS = {
 
 # slug -> exact item name as it appears in the lis-skins JSON feed
 ITEMS = {
+    "butterfly-doppler-p1-fn": "★ Butterfly Knife | Doppler Phase 1 (Factory New)",
+    "butterfly-doppler-p2-fn": "★ Butterfly Knife | Doppler Phase 2 (Factory New)",
+    "butterfly-doppler-p4-fn": "★ Butterfly Knife | Doppler Phase 4 (Factory New)",
+    "karambit-doppler-p2-fn": "★ Karambit | Doppler Phase 2 (Factory New)",
+    "karambit-gamma-doppler-p1-fn": "★ Karambit | Gamma Doppler Phase 1 (Factory New)",
+    "karambit-gamma-doppler-p2-fn": "★ Karambit | Gamma Doppler Phase 2 (Factory New)",
+    "karambit-gamma-doppler-p3-fn": "★ Karambit | Gamma Doppler Phase 3 (Factory New)",
+    "karambit-gamma-doppler-p4-fn": "★ Karambit | Gamma Doppler Phase 4 (Factory New)",
     # Butterfly Knife
     "slaughter-ft": "★ Butterfly Knife | Slaughter (Field-Tested)",
     "slaughter-mw": "★ Butterfly Knife | Slaughter (Minimal Wear)",
@@ -166,25 +174,31 @@ def trim(history):
 
 def send_telegram(text):
     token = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
-    if not token or not chat_id:
+    recipients = list(dict.fromkeys(
+        chat.strip() for value in (
+            os.environ.get("TELEGRAM_CHAT_ID", ""),
+            os.environ.get("TELEGRAM_EXTRA_CHAT_IDS", ""),
+        ) for chat in value.split(",") if chat.strip()
+    ))
+    if not token or not recipients:
         print("Telegram secrets not set, skipping notification", file=sys.stderr)
         return
     url = f"https://api.telegram.org/bot{token}/sendMessage"
-    payload = json.dumps({
-        "chat_id": chat_id,
-        "text": text,
-        "parse_mode": "HTML",
-        "disable_web_page_preview": True,
-    }).encode("utf-8")
-    req = urllib.request.Request(
-        url, data=payload, headers={"Content-Type": "application/json"}, method="POST"
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            resp.read()
-    except Exception as e:
-        print(f"Failed to send Telegram message: {e}", file=sys.stderr)
+    for number, chat_id in enumerate(recipients, 1):
+        payload = json.dumps({
+            "chat_id": chat_id, "text": text, "parse_mode": "HTML",
+            "disable_web_page_preview": True,
+        }).encode("utf-8")
+        req = urllib.request.Request(
+            url, data=payload, headers={"Content-Type": "application/json"}, method="POST"
+        )
+        try:
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                result = json.loads(resp.read())
+                if not result.get("ok"):
+                    print(f"Telegram recipient {number}: API rejected message", file=sys.stderr)
+        except Exception as exc:
+            print(f"Telegram recipient {number}: {type(exc).__name__}", file=sys.stderr)
 
 
 def main():

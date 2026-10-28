@@ -5,10 +5,6 @@
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-slaughter-minimal-wear/",
       "history": [
         {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1241.2
-        },
-        {
           "t": "2026-10-06T06:45:24Z",
           "price": 1241.2
         },
@@ -32259,6 +32255,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1099.89
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1099.89
         }
       ],
       "csmarketcap": {
@@ -32266,17 +32266,13 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-slaughter/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "slaughter-fn": {
       "name": "★ Butterfly Knife | Slaughter (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-slaughter-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1413.07
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 1413.07
@@ -64528,24 +64524,24 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1201.87
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1201.87
         }
       ],
       "csmarketcap": {
-        "min_price": 1192.262,
+        "min_price": 1196.683,
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-slaughter/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "autotronic-ft": {
       "name": "★ Butterfly Knife | Autotronic (Field-Tested)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-autotronic-field-tested/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 823.08
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 823.08
@@ -96797,6 +96793,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 739.52
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 739.52
         }
       ],
       "csmarketcap": {
@@ -96804,17 +96804,13 @@
         "min_market": "aim-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-autotronic/field-tested",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "tiger-tooth-fn": {
       "name": "★ Butterfly Knife | Tiger Tooth (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-tiger-tooth-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1092.89
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 1092.89
@@ -129066,6 +129062,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 982.91
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 982.91
         }
       ],
       "csmarketcap": {
@@ -129073,17 +129073,13 @@
         "min_market": "aim-market",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-tiger-tooth/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "gamma-doppler-p4-mw": {
       "name": "★ Butterfly Knife | Gamma Doppler Phase 4 (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-gamma-doppler-phase-4-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 2267.83
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 2267.83
@@ -161335,6 +161331,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1884.32
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1884.32
         }
       ],
       "csmarketcap": {
@@ -161342,17 +161342,13 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-gamma-doppler-phase-4/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "gamma-doppler-p4-fn": {
       "name": "★ Butterfly Knife | Gamma Doppler Phase 4 (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-gamma-doppler-phase-4-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1729.89
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 1729.89
@@ -193604,24 +193600,24 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1633.12
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1633.12
         }
       ],
       "csmarketcap": {
-        "min_price": 1499.4,
+        "min_price": 1496.701,
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-gamma-doppler-phase-4/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "gamma-doppler-p3-fn": {
       "name": "★ Butterfly Knife | Gamma Doppler Phase 3 (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-gamma-doppler-phase-3-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1682.51
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 1682.51
@@ -225873,6 +225869,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1590.18
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1590.18
         }
       ],
       "csmarketcap": {
@@ -225880,17 +225880,13 @@
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-gamma-doppler-phase-3/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "gamma-doppler-p1-fn": {
       "name": "★ Butterfly Knife | Gamma Doppler Phase 1 (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-gamma-doppler-phase-1-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1826.38
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 1826.38
@@ -258142,24 +258138,24 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1614.79
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1614.79
         }
       ],
       "csmarketcap": {
-        "min_price": 1529.694,
+        "min_price": 1528.944,
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-gamma-doppler-phase-1/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "doppler-p3-fn": {
       "name": "★ Butterfly Knife | Doppler Phase 3 (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-doppler-phase-3-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 2060.59
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 2060.59
@@ -290411,24 +290407,24 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1890.19
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1890.19
         }
       ],
       "csmarketcap": {
         "min_price": 1818.35,
-        "min_market": "csfloat",
+        "min_market": "tradeit",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-doppler-phase-3/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "fade-fn": {
       "name": "★ Butterfly Knife | Fade (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-fade-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 2094.48
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 2094.48
@@ -322680,6 +322676,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1979.26
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1979.26
         }
       ],
       "csmarketcap": {
@@ -322687,17 +322687,13 @@
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-fade/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-doppler-phase-1-fn": {
       "name": "★ Karambit | Doppler Phase 1 (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-karambit-doppler-phase-1-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1295.86
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 1295.86
@@ -354949,6 +354945,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1147.72
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1147.72
         }
       ],
       "csmarketcap": {
@@ -354956,17 +354956,13 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-doppler-phase-1/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-doppler-phase-3-fn": {
       "name": "★ Karambit | Doppler Phase 3 (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-karambit-doppler-phase-3-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1192.07
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 1192.07
@@ -387218,6 +387214,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1147.95
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1147.95
         }
       ],
       "csmarketcap": {
@@ -387225,7 +387225,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-doppler-phase-3/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-doppler-phase-3-mw": {
@@ -419502,10 +419502,6 @@
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-karambit-doppler-phase-4-factory-new/",
       "history": [
         {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1230.39
-        },
-        {
           "t": "2026-10-06T06:45:24Z",
           "price": 1230.39
         },
@@ -451756,6 +451752,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1294.8
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1294.8
         }
       ],
       "csmarketcap": {
@@ -451763,17 +451763,13 @@
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-doppler-phase-4/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-doppler-phase-4-mw": {
       "name": "★ Karambit | Doppler Phase 4 (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-karambit-doppler-phase-4-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1451.17
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 1451.17
@@ -484025,24 +484021,24 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1512.89
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1512.89
         }
       ],
       "csmarketcap": {
-        "min_price": 1250.49,
-        "min_market": "csboard",
+        "min_price": 1259.748,
+        "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-doppler-phase-4/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-marble-fade-fn": {
       "name": "★ Karambit | Marble Fade (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-karambit-marble-fade-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1046.05
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 1046.05
@@ -516294,6 +516290,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 950.76
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 950.76
         }
       ],
       "csmarketcap": {
@@ -516301,17 +516301,13 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-marble-fade/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-marble-fade-mw": {
       "name": "★ Karambit | Marble Fade (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-karambit-marble-fade-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1149.63
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 1149.63
@@ -548563,24 +548559,24 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1210.8
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1210.8
         }
       ],
       "csmarketcap": {
-        "min_price": 1019.06,
+        "min_price": 1036.86,
         "min_market": "csmoney",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-marble-fade/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-slaughter-fn": {
       "name": "★ Karambit | Slaughter (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-karambit-slaughter-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1069.83
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 1069.83
@@ -580832,6 +580828,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1049.38
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1049.38
         }
       ],
       "csmarketcap": {
@@ -580839,17 +580839,13 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-slaughter/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-slaughter-ft": {
       "name": "★ Karambit | Slaughter (Field-Tested)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-karambit-slaughter-field-tested/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 835.19
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 835.19
@@ -613101,6 +613097,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 826.9
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 826.9
         }
       ],
       "csmarketcap": {
@@ -613108,17 +613108,13 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-slaughter/field-tested",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-slaughter-mw": {
       "name": "★ Karambit | Slaughter (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-karambit-slaughter-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 886.11
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 886.11
@@ -645370,6 +645366,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 851.44
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 851.44
         }
       ],
       "csmarketcap": {
@@ -645377,17 +645377,13 @@
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-slaughter/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-tiger-tooth-fn": {
       "name": "★ Karambit | Tiger Tooth (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-karambit-tiger-tooth-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 792.93
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 792.93
@@ -677639,6 +677635,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 783.22
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 783.22
         }
       ],
       "csmarketcap": {
@@ -677646,17 +677646,13 @@
         "min_market": "csdeals",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-tiger-tooth/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-tiger-tooth-mw": {
       "name": "★ Karambit | Tiger Tooth (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-karambit-tiger-tooth-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 913.95
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 913.95
@@ -709908,6 +709904,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 922.07
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 922.07
         }
       ],
       "csmarketcap": {
@@ -709915,17 +709915,13 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-tiger-tooth/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "butterfly-knife-freehand-fn": {
       "name": "★ Butterfly Knife | Freehand (Factory New)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-freehand-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 671.35
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 671.35
@@ -742177,6 +742173,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 597.45
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 597.45
         }
       ],
       "csmarketcap": {
@@ -742184,17 +742184,13 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-freehand/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "butterfly-knife-freehand-ft": {
       "name": "★ Butterfly Knife | Freehand (Field-Tested)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-freehand-field-tested/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 576.92
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 576.92
@@ -774446,24 +774442,24 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 519.36
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 519.36
         }
       ],
       "csmarketcap": {
-        "min_price": 481.9,
-        "min_market": "skinswap",
+        "min_price": 493.401,
+        "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-freehand/field-tested",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "butterfly-knife-freehand-mw": {
       "name": "★ Butterfly Knife | Freehand (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-freehand-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 595.46
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 595.46
@@ -806715,6 +806711,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 577.27
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 577.27
         }
       ],
       "csmarketcap": {
@@ -806722,17 +806722,13 @@
         "min_market": "skinport",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-freehand/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-aquamarine-revenge-fn": {
       "name": "AK-47 | Aquamarine Revenge (Factory New)",
       "url": "https://lis-skins.com/market/csgo/ak-47-aquamarine-revenge-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 181.68
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 181.68
@@ -838984,24 +838980,24 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 152.97
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 152.97
         }
       ],
       "csmarketcap": {
-        "min_price": 144.51,
+        "min_price": 145.96,
         "min_market": "tradeit",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-aquamarine-revenge/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-aquamarine-revenge-mw": {
       "name": "AK-47 | Aquamarine Revenge (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/ak-47-aquamarine-revenge-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 55.59
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 55.59
@@ -871253,24 +871249,24 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 52.7
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 52.7
         }
       ],
       "csmarketcap": {
-        "min_price": 49.34,
-        "min_market": "youpin",
+        "min_price": 49.91,
+        "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-aquamarine-revenge/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-b-the-monster-fn": {
       "name": "AK-47 | B the Monster (Factory New)",
       "url": "https://lis-skins.com/market/csgo/ak-47-b-the-monster-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 337.22
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 337.22
@@ -903522,6 +903518,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 295.01
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 295.01
         }
       ],
       "csmarketcap": {
@@ -903529,17 +903529,13 @@
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-b-the-monster/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-b-the-monster-ft": {
       "name": "AK-47 | B the Monster (Field-Tested)",
       "url": "https://lis-skins.com/market/csgo/ak-47-b-the-monster-field-tested/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 75
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 75
@@ -935791,6 +935787,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 66.27
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 66.27
         }
       ],
       "csmarketcap": {
@@ -935798,17 +935798,13 @@
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-b-the-monster/field-tested",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-b-the-monster-mw": {
       "name": "AK-47 | B the Monster (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/ak-47-b-the-monster-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 131.75
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 131.75
@@ -968060,6 +968056,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 122.32
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 122.32
         }
       ],
       "csmarketcap": {
@@ -968067,17 +968067,13 @@
         "min_market": "rapidskins",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-b-the-monster/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-bloodsport-fn": {
       "name": "AK-47 | Bloodsport (Factory New)",
       "url": "https://lis-skins.com/market/csgo/ak-47-bloodsport-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 158.16
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 158.16
@@ -1000329,6 +1000325,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 140.89
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 140.89
         }
       ],
       "csmarketcap": {
@@ -1000336,17 +1000336,13 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-bloodsport/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-bloodsport-ft": {
       "name": "AK-47 | Bloodsport (Field-Tested)",
       "url": "https://lis-skins.com/market/csgo/ak-47-bloodsport-field-tested/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 106.58
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 106.58
@@ -1032598,6 +1032594,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 100.23
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 100.23
         }
       ],
       "csmarketcap": {
@@ -1032605,17 +1032605,13 @@
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-bloodsport/field-tested",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-bloodsport-mw": {
       "name": "AK-47 | Bloodsport (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/ak-47-bloodsport-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 122.31
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 122.31
@@ -1064867,6 +1064863,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 114.91
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 114.91
         }
       ],
       "csmarketcap": {
@@ -1064874,17 +1064874,13 @@
         "min_market": "uuskins",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-bloodsport/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-inheritance-fn": {
       "name": "AK-47 | Inheritance (Factory New)",
       "url": "https://lis-skins.com/market/csgo/ak-47-inheritance-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 101.42
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 101.42
@@ -1097136,6 +1097132,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 90.01
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 90.01
         }
       ],
       "csmarketcap": {
@@ -1097143,17 +1097143,13 @@
         "min_market": "rapidskins",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-inheritance/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-inheritance-mw": {
       "name": "AK-47 | Inheritance (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/ak-47-inheritance-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 50.53
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 50.53
@@ -1129405,6 +1129401,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 48.23
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 48.23
         }
       ],
       "csmarketcap": {
@@ -1129412,17 +1129412,13 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-inheritance/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-neon-rider-fn": {
       "name": "AK-47 | Neon Rider (Factory New)",
       "url": "https://lis-skins.com/market/csgo/ak-47-neon-rider-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 213.57
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 213.57
@@ -1161674,6 +1161670,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 177.6
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 177.6
         }
       ],
       "csmarketcap": {
@@ -1161681,17 +1161681,13 @@
         "min_market": "csmoney",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-neon-rider/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-neon-rider-ft": {
       "name": "AK-47 | Neon Rider (Field-Tested)",
       "url": "https://lis-skins.com/market/csgo/ak-47-neon-rider-field-tested/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 39.94
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 39.94
@@ -1193943,6 +1193939,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 39.18
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 39.18
         }
       ],
       "csmarketcap": {
@@ -1193950,17 +1193950,13 @@
         "min_market": "dmarket",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-neon-rider/field-tested",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-neon-rider-mw": {
       "name": "AK-47 | Neon Rider (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/ak-47-neon-rider-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 65.53
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 65.53
@@ -1226212,6 +1226208,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 63.03
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 63.03
         }
       ],
       "csmarketcap": {
@@ -1226219,17 +1226219,13 @@
         "min_market": "uuskins",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-neon-rider/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-point-disarray-fn": {
       "name": "AK-47 | Point Disarray (Factory New)",
       "url": "https://lis-skins.com/market/csgo/ak-47-point-disarray-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 57.57
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 57.57
@@ -1258481,24 +1258477,24 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 43.37
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 43.37
         }
       ],
       "csmarketcap": {
-        "min_price": 40.53,
-        "min_market": "csmoney",
+        "min_price": 40.77,
+        "min_market": "mannco",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-point-disarray/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-the-empress-fn": {
       "name": "AK-47 | The Empress (Factory New)",
       "url": "https://lis-skins.com/market/csgo/ak-47-the-empress-factory-new/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 234.27
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 234.27
@@ -1290750,6 +1290746,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 201.86
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 201.86
         }
       ],
       "csmarketcap": {
@@ -1290757,17 +1290757,13 @@
         "min_market": "tradeit",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-the-empress/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-the-empress-ft": {
       "name": "AK-47 | The Empress (Field-Tested)",
       "url": "https://lis-skins.com/market/csgo/ak-47-the-empress-field-tested/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 102.5
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 102.5
@@ -1323019,24 +1323015,24 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 87.54
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 87.54
         }
       ],
       "csmarketcap": {
-        "min_price": 86.34,
-        "min_market": "csmoney",
+        "min_price": 84.98,
+        "min_market": "skinport",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-the-empress/field-tested",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-the-empress-mw": {
       "name": "AK-47 | The Empress (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/ak-47-the-empress-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 104.13
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 104.13
@@ -1355288,6 +1355284,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 93.42
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 93.42
         }
       ],
       "csmarketcap": {
@@ -1355295,17 +1355295,13 @@
         "min_market": "skinport",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-the-empress/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-vulcan-ft": {
       "name": "AK-47 | Vulcan (Field-Tested)",
       "url": "https://lis-skins.com/market/csgo/ak-47-vulcan-field-tested/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 172.24
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 172.24
@@ -1387557,6 +1387553,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 159.49
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 159.49
         }
       ],
       "csmarketcap": {
@@ -1387564,17 +1387564,13 @@
         "min_market": "csmoney",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-vulcan/field-tested",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "ak-47-vulcan-mw": {
       "name": "AK-47 | Vulcan (Minimal Wear)",
       "url": "https://lis-skins.com/market/csgo/ak-47-vulcan-minimal-wear/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 355.94
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 355.94
@@ -1419826,6 +1419822,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 315.15
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 315.15
         }
       ],
       "csmarketcap": {
@@ -1419833,17 +1419833,13 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/ak-47-vulcan/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "slaughter-ft": {
       "name": "★ Butterfly Knife | Slaughter (Field-Tested)",
       "url": "https://lis-skins.com/market/csgo/%E2%98%85-butterfly-knife-slaughter-field-tested/",
       "history": [
-        {
-          "t": "2026-10-06T06:42:23Z",
-          "price": 1075.58
-        },
         {
           "t": "2026-10-06T06:45:24Z",
           "price": 1075.58
@@ -1452095,6 +1452091,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1021.86
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1021.86
         }
       ],
       "csmarketcap": {
@@ -1452102,7 +1452102,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-slaughter/field-tested",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "gamma-doppler-p2-mw": {
@@ -1479100,6 +1479100,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 2106.17
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 2106.17
         }
       ],
       "csmarketcap": {
@@ -1479107,7 +1479111,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-gamma-doppler-phase-2/minimal-wear",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "gamma-doppler-p2-fn": {
@@ -1506105,6 +1506109,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1982.65
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1982.65
         }
       ],
       "csmarketcap": {
@@ -1506112,7 +1506120,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-gamma-doppler-phase-2/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "butterfly-doppler-p1-fn": {
@@ -1532182,6 +1532190,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 2218.5
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 2218.5
         }
       ],
       "csmarketcap": {
@@ -1532189,7 +1532201,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-doppler-phase-1/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "butterfly-doppler-p2-fn": {
@@ -1558259,14 +1558271,18 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 3917.79
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 3917.79
         }
       ],
       "csmarketcap": {
-        "min_price": 3687.013,
+        "min_price": 3686.263,
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-doppler-phase-2/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "butterfly-doppler-p4-fn": {
@@ -1584336,6 +1584352,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 2808.33
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 2808.33
         }
       ],
       "csmarketcap": {
@@ -1584343,7 +1584363,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/butterfly-knife-doppler-phase-4/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-doppler-p2-fn": {
@@ -1610413,6 +1610433,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1537.66
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1537.66
         }
       ],
       "csmarketcap": {
@@ -1610420,7 +1610444,7 @@
         "min_market": "buff163",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-doppler-phase-2/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-gamma-doppler-p1-fn": {
@@ -1636490,6 +1636514,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1650.74
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1650.74
         }
       ],
       "csmarketcap": {
@@ -1636497,7 +1636525,7 @@
         "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-gamma-doppler-phase-1/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-gamma-doppler-p2-fn": {
@@ -1662567,14 +1662595,18 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 2149.7
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 2149.7
         }
       ],
       "csmarketcap": {
-        "min_price": 2017.72,
-        "min_market": "csfloat",
+        "min_price": 1994.601,
+        "min_market": "youpin",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-gamma-doppler-phase-2/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-gamma-doppler-p3-fn": {
@@ -1688644,6 +1688676,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1544.57
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1544.57
         }
       ],
       "csmarketcap": {
@@ -1688651,7 +1688687,7 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-gamma-doppler-phase-3/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     },
     "karambit-gamma-doppler-p4-fn": {
@@ -1714721,6 +1714757,10 @@
         {
           "t": "2026-10-28T11:42:24Z",
           "price": 1463.8
+        },
+        {
+          "t": "2026-10-28T11:45:24Z",
+          "price": 1463.8
         }
       ],
       "csmarketcap": {
@@ -1714728,16 +1714768,12 @@
         "min_market": "csfloat",
         "lis_cheapest": false,
         "url": "https://csmarketcap.com/ru/item/karambit-gamma-doppler-phase-4/factory-new",
-        "checked_at": "2026-10-28T11:30:23Z"
+        "checked_at": "2026-10-28T11:45:24Z"
       }
     }
   },
   "usd_rub": {
     "history": [
-      {
-        "t": "2026-10-06T06:36:24Z",
-        "rate": 84.9309
-      },
       {
         "t": "2026-10-06T06:39:22Z",
         "rate": 84.9309
@@ -1746989,8 +1747025,12 @@
       {
         "t": "2026-10-28T11:42:24Z",
         "rate": 80.5307
+      },
+      {
+        "t": "2026-10-28T11:45:24Z",
+        "rate": 80.5307
       }
     ]
   },
-  "last_updated": "2026-10-28T11:42:24Z"
+  "last_updated": "2026-10-28T11:45:24Z"
 }

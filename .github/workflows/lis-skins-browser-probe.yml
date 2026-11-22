@@ -26,7 +26,7 @@ jobs:
           import re
           from decimal import Decimal
 
-          from playwright.sync_api import Error, sync_playwright
+          from playwright.sync_api import Error, TimeoutError, sync_playwright
 
           PRODUCTS = [
               (
@@ -67,16 +67,21 @@ jobs:
               title = page.title()
               challenge = response.headers.get("cf-mitigated", "")
               print(f"{name}: status={response.status}, cf-mitigated={challenge or '-'}, title={title!r}")
+              product_heading = page.get_by_role("heading", name=name, exact=True, level=1)
               if challenge == "challenge" or re.search(
                   r"just a moment|один момент|security verification",
                   title,
                   re.IGNORECASE,
               ):
-                  return "BLOCKED: Cloudflare requested a security check"
-              if response.status >= 400:
+                  print("Waiting up to 30 seconds for normal browser verification")
+                  try:
+                      product_heading.wait_for(timeout=30_000)
+                  except TimeoutError:
+                      return "BLOCKED: Cloudflare prevented access after 30 seconds of waiting"
+              elif response.status >= 400:
                   return f"BLOCKED: HTTP {response.status}"
 
-              page.get_by_role("heading", name=name, exact=True, level=1).wait_for(timeout=12_000)
+              product_heading.wait_for(timeout=12_000)
               rows = page.locator(".ui-row--clickable")
               rows.nth(1).wait_for(timeout=10_000)
               offers = []

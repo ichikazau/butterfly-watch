@@ -7,7 +7,7 @@ import time
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
-from pattern_monitor import fetch_pattern_listings, pattern_label
+from pattern_monitor import fetch_export_listings, fetch_pattern_listings, pattern_label
 
 DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.json")
 LIS_SKINS_FEED = "https://lis-skins.com/market_export_json/csgo.json"
@@ -17,6 +17,7 @@ MIN_HISTORY_AGE_FOR_MIN_ALERT = timedelta(hours=24)  # new items haven't set a m
 MAX_HISTORY_POINTS = 8064  # ~4 weeks at 5-minute intervals
 TALON_FADE_SLUG = "talon-knife-fade-fn"
 PATTERN_SLUGS = (TALON_FADE_SLUG, "karambit-doppler-phase-1-fn")
+PATTERN_TOP_COUNT = 5
 
 # csmarketcap.com aggregates the same item's price across ~20-30 marketplaces.
 # Checking all 186 tracked items there is heavy on their server, so it only
@@ -212,7 +213,9 @@ def send_telegram(text):
 
 
 def pattern_listing_text(lot, label):
-    return f"<b>{label} #{lot['item_paint_seed']}</b> · ${lot['price']:.2f} · лот {lot['id']}"
+    wear = lot.get("item_float")
+    float_text = f" · float {wear:.8f}" if wear is not None else ""
+    return f"<b>{label} #{lot['item_paint_seed']}</b> · ${lot['price']:.2f}{float_text} · лот {lot['id']}"
 
 
 def talon_pattern_notes(listings):
@@ -229,14 +232,47 @@ def talon_pattern_notes(listings):
     return ["В продаже на LIS-SKINS:", *notes] if notes else []
 
 
-def notify_top_patterns(data, listings):
+def fetch_pattern_snapshot(previous):
+    names = [ITEMS[slug] for slug in PATTERN_SLUGS]
+    started = time.monotonic()
+    api_key = os.environ.get("LIS_SKINS_API_KEY")
+    if api_key:
+        listings = fetch_pattern_listings(api_key, names)
+        etag = None
+    else:
+        listings, etag = fetch_export_listings(names, previous.get("etag"))
+
+    if listings is None:
+        print("LIS-SKINS listing export is unchanged")
+        return previous
+
+    offer_fields = ("id", "price", "item_paint_seed", "item_float")
+    top_offers = {
+        slug: [{field: lot.get(field) for field in offer_fields} for lot in listings[ITEMS[slug]][:PATTERN_TOP_COUNT]]
+        for slug in PATTERN_SLUGS
+    }
+    for slug, offers in top_offers.items():
+        ranks = ", ".join(
+            f"#{rank} ${lot['price']:.2f} seed {lot['item_paint_seed']}"
+            for rank, lot in enumerate(offers, 1)
+        )
+        print(f"LIS-SKINS {ITEMS[slug]}: {ranks or 'no offers'}")
+    print(f"LIS-SKINS listing check took {time.monotonic() - started:.1f}s")
+    return {
+        "etag": etag,
+        "top_offers": top_offers,
+        "talon_notes": talon_pattern_notes(listings[ITEMS[TALON_FADE_SLUG]]),
+    }
+
+
+def notify_top_patterns(data, top_offers):
     notified = data.setdefault("notified_top_patterns", {})
-    for slug in PATTERN_SLUGS:
+    for slug, offers in top_offers.items():
         name = ITEMS[slug]
         previous = set(notified.get(slug, []))
         current = []
         lines = []
-        for rank, lot in enumerate(listings[name][:2], 1):
+        for rank, lot in enumerate(offers, 1):
             label = pattern_label(slug, lot["item_paint_seed"])
             if label is None:
                 continue
@@ -246,9 +282,10 @@ def notify_top_patterns(data, listings):
 
         if lines:
             url = data["items"].get(slug, {}).get("url") or ""
-            message = "\n".join(["🦋 <b>Butterfly Watch: паттерн в топ-2</b>", f"<b>{name}</b>", *lines, url])
+            title = f"🦋 <b>Butterfly Watch: паттерн в топ-{PATTERN_TOP_COUNT}</b>"
+            message = "\n".join([title, f"<b>{name}</b>", *lines, url])
             if send_telegram(message):
-                print(f"Sent top-two pattern alert for {name}")
+                print(f"Sent top-{PATTERN_TOP_COUNT} pattern alert for {name}")
             else:
                 current = [lot_id for lot_id in current if lot_id in previous]
         notified[slug] = current
@@ -271,15 +308,11 @@ def main():
         sys.exit(1)
     by_name = {entry["name"]: entry for entry in feed}
 
-    pattern_listings = None
-    api_key = os.environ.get("LIS_SKINS_API_KEY")
-    if api_key:
-        try:
-            pattern_listings = fetch_pattern_listings(api_key, [ITEMS[slug] for slug in PATTERN_SLUGS])
-        except Exception as exc:
-            print(f"WARNING: LIS-SKINS pattern check failed ({type(exc).__name__})", file=sys.stderr)
-    else:
-        print("LIS_SKINS_API_KEY is not set, skipping pattern check")
+    pattern_snapshot = None
+    try:
+        pattern_snapshot = fetch_pattern_snapshot(data.get("pattern_snapshot", {}))
+    except Exception as exc:
+        print(f"WARNING: LIS-SKINS pattern check failed ({type(exc).__name__})", file=sys.stderr)
 
     try:
         cbr = fetch_json(CBR_RATE_URL)
@@ -366,8 +399,8 @@ def main():
             time.sleep(CSMARKETCAP_REQUEST_DELAY)
 
         if reasons:
-            if slug == TALON_FADE_SLUG and pattern_listings is not None:
-                reasons.extend(talon_pattern_notes(pattern_listings[match_name]))
+            if slug == TALON_FADE_SLUG and pattern_snapshot is not None:
+                reasons.extend(pattern_snapshot["talon_notes"])
             alerts.append(
                 f"<b>{match_name}</b>\n"
                 f"Цена: <b>${price:.2f}</b>\n"
@@ -375,8 +408,9 @@ def main():
                 f"{entry.get('url', '')}"
             )
 
-    if pattern_listings is not None:
-        notify_top_patterns(data, pattern_listings)
+    if pattern_snapshot is not None:
+        data["pattern_snapshot"] = pattern_snapshot
+        notify_top_patterns(data, pattern_snapshot["top_offers"])
 
     data["last_updated"] = now
     save_data(data)

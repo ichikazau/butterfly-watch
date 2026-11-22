@@ -398,7 +398,7 @@ def main():
                 print(f"WARNING: csmarketcap check failed for {match_name}: {e}", file=sys.stderr)
             time.sleep(CSMARKETCAP_REQUEST_DELAY)
 
-        if reasons:
+        if reasons and slug in PATTERN_SLUGS:
             if slug == TALON_FADE_SLUG and pattern_snapshot is not None:
                 reasons.extend(pattern_snapshot["talon_notes"])
             alerts.append(

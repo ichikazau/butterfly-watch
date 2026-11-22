@@ -70,6 +70,8 @@ ITEMS = {
     "butterfly-knife-freehand-fn": "★ Butterfly Knife | Freehand (Factory New)",
     "butterfly-knife-freehand-ft": "★ Butterfly Knife | Freehand (Field-Tested)",
     "butterfly-knife-freehand-mw": "★ Butterfly Knife | Freehand (Minimal Wear)",
+    # Talon Knife
+    "talon-knife-fade-fn": "★ Talon Knife | Fade (Factory New)",
     # AK-47 (selected skins, 3000-40000₽, FN/MW/FT, no StatTrak)
     "ak-47-aquamarine-revenge-fn": "AK-47 | Aquamarine Revenge (Factory New)",
     "ak-47-aquamarine-revenge-mw": "AK-47 | Aquamarine Revenge (Minimal Wear)",

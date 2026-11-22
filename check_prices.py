@@ -7,12 +7,16 @@ import time
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
+from pattern_monitor import fetch_pattern_listings, pattern_label
+
 DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.json")
 LIS_SKINS_FEED = "https://lis-skins.com/market_export_json/csgo.json"
 CBR_RATE_URL = "https://www.cbr-xml-daily.ru/daily_json.js"
 PREV_CHECK_DROP_THRESHOLD = 0.05  # 5% drop since the previous check (rises are not alerted on)
 MIN_HISTORY_AGE_FOR_MIN_ALERT = timedelta(hours=24)  # new items haven't set a meaningful low yet
 MAX_HISTORY_POINTS = 8064  # ~4 weeks at 5-minute intervals
+TALON_FADE_SLUG = "talon-knife-fade-fn"
+PATTERN_SLUGS = (TALON_FADE_SLUG, "karambit-doppler-phase-1-fn")
 
 # csmarketcap.com aggregates the same item's price across ~20-30 marketplaces.
 # Checking all 186 tracked items there is heavy on their server, so it only
@@ -184,8 +188,9 @@ def send_telegram(text):
     ))
     if not token or not recipients:
         print("Telegram secrets not set, skipping notification", file=sys.stderr)
-        return
+        return False
     url = f"https://api.telegram.org/bot{token}/sendMessage"
+    delivered = False
     for number, chat_id in enumerate(recipients, 1):
         payload = json.dumps({
             "chat_id": chat_id, "text": text, "parse_mode": "HTML",
@@ -197,10 +202,56 @@ def send_telegram(text):
         try:
             with urllib.request.urlopen(req, timeout=15) as resp:
                 result = json.loads(resp.read())
-                if not result.get("ok"):
+                if result.get("ok"):
+                    delivered = True
+                else:
                     print(f"Telegram recipient {number}: API rejected message", file=sys.stderr)
         except Exception as exc:
             print(f"Telegram recipient {number}: {type(exc).__name__}", file=sys.stderr)
+    return delivered
+
+
+def pattern_listing_text(lot, label):
+    return f"<b>{label} #{lot['item_paint_seed']}</b> · ${lot['price']:.2f} · лот {lot['id']}"
+
+
+def talon_pattern_notes(listings):
+    matches = {}
+    for lot in listings:
+        seed = lot["item_paint_seed"]
+        label = pattern_label(TALON_FADE_SLUG, seed)
+        if label and seed not in matches:
+            matches[seed] = pattern_listing_text(lot, label)
+    reference = matches.pop(412, None)
+    notes = list(matches.values())
+    if reference:
+        notes.insert(0, reference)
+    return ["В продаже на LIS-SKINS:", *notes] if notes else []
+
+
+def notify_top_patterns(data, listings):
+    notified = data.setdefault("notified_top_patterns", {})
+    for slug in PATTERN_SLUGS:
+        name = ITEMS[slug]
+        previous = set(notified.get(slug, []))
+        current = []
+        lines = []
+        for rank, lot in enumerate(listings[name][:2], 1):
+            label = pattern_label(slug, lot["item_paint_seed"])
+            if label is None:
+                continue
+            current.append(lot["id"])
+            if lot["id"] not in previous:
+                lines.append(f"#{rank} по цене · {pattern_listing_text(lot, label)}")
+
+        if lines:
+            url = data["items"].get(slug, {}).get("url") or ""
+            message = "\n".join(["🦋 <b>Butterfly Watch: паттерн в топ-2</b>", f"<b>{name}</b>", *lines, url])
+            if send_telegram(message):
+                print(f"Sent top-two pattern alert for {name}")
+            else:
+                current = [lot_id for lot_id in current if lot_id in previous]
+        notified[slug] = current
 
 
 def main():
@@ -219,6 +270,16 @@ def main():
         print(f"Failed to fetch lis-skins feed: {e}", file=sys.stderr)
         sys.exit(1)
     by_name = {entry["name"]: entry for entry in feed}
+
+    pattern_listings = None
+    api_key = os.environ.get("LIS_SKINS_API_KEY")
+    if api_key:
+        try:
+            pattern_listings = fetch_pattern_listings(api_key, [ITEMS[slug] for slug in PATTERN_SLUGS])
+        except Exception as exc:
+            print(f"WARNING: LIS-SKINS pattern check failed ({type(exc).__name__})", file=sys.stderr)
+    else:
+        print("LIS_SKINS_API_KEY is not set, skipping pattern check")
 
     try:
         cbr = fetch_json(CBR_RATE_URL)
@@ -305,6 +366,8 @@ def main():
             time.sleep(CSMARKETCAP_REQUEST_DELAY)
 
         if reasons:
+            if slug == TALON_FADE_SLUG and pattern_listings is not None:
+                reasons.extend(talon_pattern_notes(pattern_listings[match_name]))
             alerts.append(
                 f"<b>{match_name}</b>\n"
                 f"Цена: <b>${price:.2f}</b>\n"
@@ -312,13 +375,16 @@ def main():
                 f"{entry.get('url', '')}"
             )
 
+    if pattern_listings is not None:
+        notify_top_patterns(data, pattern_listings)
+
     data["last_updated"] = now
     save_data(data)
 
     if alerts:
         message = "\U0001F98B <b>Butterfly Watch: изменение цены!</b>\n\n" + "\n\n".join(alerts)
-        send_telegram(message)
-        print(f"Sent {len(alerts)} alert(s)")
+        if send_telegram(message):
+            print(f"Sent {len(alerts)} alert(s)")
     else:
         print("No price drops detected")
 

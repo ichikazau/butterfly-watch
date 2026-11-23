@@ -242,13 +242,17 @@ def compact_offer(lot):
 
 def fetch_pattern_snapshot(previous):
     names = [ITEMS[slug] for slug in PATTERN_SLUGS]
+    tracked_seeds = {
+        slug: [seed for seed in range(1001) if pattern_label(slug, seed) is not None]
+        for slug in PATTERN_SLUGS
+    }
     started = time.monotonic()
     api_key = os.environ.get("LIS_SKINS_API_KEY")
     if api_key:
         listings = fetch_pattern_listings(api_key, names)
         etag = None
     else:
-        cached_etag = previous.get("etag") if "pattern_offers" in previous else None
+        cached_etag = previous.get("etag") if previous.get("tracked_seeds") == tracked_seeds else None
         listings, etag = fetch_export_listings(names, cached_etag)
 
     if listings is None:
@@ -276,6 +280,7 @@ def fetch_pattern_snapshot(previous):
     print(f"LIS-SKINS listing check took {time.monotonic() - started:.1f}s")
     return {
         "etag": etag,
+        "tracked_seeds": tracked_seeds,
         "top_offers": top_offers,
         "pattern_offers": pattern_offers,
         "talon_notes": talon_pattern_notes(listings[ITEMS[TALON_FADE_SLUG]]),

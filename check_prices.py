@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 import json
+import math
 import os
 import re
 import sys
 import time
 import urllib.request
 from datetime import datetime, timedelta, timezone
+from decimal import Decimal
 
 from pattern_monitor import fetch_export_listings, fetch_pattern_listings, pattern_label
 
@@ -18,6 +20,8 @@ MAX_HISTORY_POINTS = 8064  # ~4 weeks at 5-minute intervals
 TALON_FADE_SLUG = "talon-knife-fade-fn"
 PATTERN_SLUGS = (TALON_FADE_SLUG, "karambit-doppler-phase-1-fn")
 PATTERN_TOP_COUNT = 5
+PATTERN_PREMIUM_RUB = 1500
+PATTERN_ALERT_BATCH_SIZE = 20
 
 # csmarketcap.com aggregates the same item's price across ~20-30 marketplaces.
 # Checking all 186 tracked items there is heavy on their server, so it only
@@ -232,6 +236,10 @@ def talon_pattern_notes(listings):
     return ["В продаже на LIS-SKINS:", *notes] if notes else []
 
 
+def compact_offer(lot):
+    return {field: lot.get(field) for field in ("id", "price", "item_paint_seed", "item_float")}
+
+
 def fetch_pattern_snapshot(previous):
     names = [ITEMS[slug] for slug in PATTERN_SLUGS]
     started = time.monotonic()
@@ -240,15 +248,23 @@ def fetch_pattern_snapshot(previous):
         listings = fetch_pattern_listings(api_key, names)
         etag = None
     else:
-        listings, etag = fetch_export_listings(names, previous.get("etag"))
+        cached_etag = previous.get("etag") if "pattern_offers" in previous else None
+        listings, etag = fetch_export_listings(names, cached_etag)
 
     if listings is None:
         print("LIS-SKINS listing export is unchanged")
         return previous
 
-    offer_fields = ("id", "price", "item_paint_seed", "item_float")
     top_offers = {
-        slug: [{field: lot.get(field) for field in offer_fields} for lot in listings[ITEMS[slug]][:PATTERN_TOP_COUNT]]
+        slug: [compact_offer(lot) for lot in listings[ITEMS[slug]][:PATTERN_TOP_COUNT]]
+        for slug in PATTERN_SLUGS
+    }
+    pattern_offers = {
+        slug: [
+            {"rank": rank, **compact_offer(lot)}
+            for rank, lot in enumerate(listings[ITEMS[slug]], 1)
+            if pattern_label(slug, lot["item_paint_seed"]) is not None
+        ]
         for slug in PATTERN_SLUGS
     }
     for slug, offers in top_offers.items():
@@ -261,34 +277,54 @@ def fetch_pattern_snapshot(previous):
     return {
         "etag": etag,
         "top_offers": top_offers,
+        "pattern_offers": pattern_offers,
         "talon_notes": talon_pattern_notes(listings[ITEMS[TALON_FADE_SLUG]]),
     }
 
 
-def notify_top_patterns(data, top_offers):
+def notify_pattern_matches(data, snapshot, usd_rate):
     notified = data.setdefault("notified_top_patterns", {})
-    for slug, offers in top_offers.items():
-        name = ITEMS[slug]
-        previous = set(notified.get(slug, []))
-        current = []
-        lines = []
-        for rank, lot in enumerate(offers, 1):
-            label = pattern_label(slug, lot["item_paint_seed"])
-            if label is None:
-                continue
-            current.append(lot["id"])
-            if lot["id"] not in previous:
-                lines.append(f"#{rank} по цене · {pattern_listing_text(lot, label)}")
+    rub_per_dollar = Decimal(str(usd_rate)) if usd_rate is not None else None
+    for slug, offers in snapshot["pattern_offers"].items():
+        if not offers:
+            notified[slug] = []
+            continue
 
-        if lines:
-            url = data["items"].get(slug, {}).get("url") or ""
-            title = f"🦋 <b>Butterfly Watch: паттерн в топ-{PATTERN_TOP_COUNT}</b>"
+        name = ITEMS[slug]
+        floor = Decimal(str(snapshot["top_offers"][slug][0]["price"]))
+        previous = set(notified.get(slug, []))
+        delivered = set()
+        pending = []
+        for lot in offers:
+            lot_id = lot["id"]
+            rank = lot["rank"]
+            premium = (
+                (Decimal(str(lot["price"])) - floor) * rub_per_dollar
+                if rub_per_dollar is not None else None
+            )
+            if rank > PATTERN_TOP_COUNT and (premium is None or premium > PATTERN_PREMIUM_RUB):
+                if premium is None and lot_id in previous:
+                    delivered.add(lot_id)
+                continue
+            if lot_id in previous:
+                delivered.add(lot_id)
+                continue
+
+            label = pattern_label(slug, lot["item_paint_seed"])
+            premium_text = f" · ≈ +{premium:.0f} ₽ к минимуму" if premium is not None else ""
+            line = f"#{rank} по цене · {pattern_listing_text(lot, label)}{premium_text}"
+            pending.append((lot_id, line))
+
+        url = data["items"].get(slug, {}).get("url") or ""
+        title = "🦋 <b>Butterfly Watch: подходящий паттерн</b>"
+        for start in range(0, len(pending), PATTERN_ALERT_BATCH_SIZE):
+            batch = pending[start:start + PATTERN_ALERT_BATCH_SIZE]
+            lines = [line for _, line in batch]
             message = "\n".join([title, f"<b>{name}</b>", *lines, url])
             if send_telegram(message):
-                print(f"Sent top-{PATTERN_TOP_COUNT} pattern alert for {name}")
-            else:
-                current = [lot_id for lot_id in current if lot_id in previous]
-        notified[slug] = current
+                delivered.update(lot_id for lot_id, _ in batch)
+                print(f"Sent pattern alert for {name} ({len(batch)} lots)")
+        notified[slug] = sorted(delivered)
 
 
 def main():
@@ -317,12 +353,14 @@ def main():
     try:
         cbr = fetch_json(CBR_RATE_URL)
         usd_rate = cbr["Valute"]["USD"]["Value"]
+        if type(usd_rate) not in (int, float) or not math.isfinite(usd_rate) or usd_rate <= 0:
+            raise ValueError("invalid USD/RUB rate")
     except Exception as e:
         print(f"Failed to fetch USD/RUB rate: {e}", file=sys.stderr)
         usd_rate = None
 
+    rate_history = data["usd_rub"]["history"]
     if usd_rate is not None:
-        rate_history = data["usd_rub"]["history"]
         rate_history.append({"t": now, "rate": usd_rate})
         trim(rate_history)
 
@@ -410,7 +448,8 @@ def main():
 
     if pattern_snapshot is not None:
         data["pattern_snapshot"] = pattern_snapshot
-        notify_top_patterns(data, pattern_snapshot["top_offers"])
+        last_rate = rate_history[-1]["rate"] if rate_history else None
+        notify_pattern_matches(data, pattern_snapshot, last_rate)
 
     data["last_updated"] = now
     save_data(data)

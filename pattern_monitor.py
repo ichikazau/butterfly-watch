@@ -1,36 +1,97 @@
 import gzip
-import json
 import math
 import time
 import urllib.error
-import urllib.parse
 import urllib.request
 
 import ijson
 
-LIS_SKINS_SEARCH = "https://api.lis-skins.com/v1/market/search"
 LIS_SKINS_EXPORT = "https://lis-skins.com/market_export_json/api_csgo_full.json"
 EXPORT_TRANSFER_TIMEOUT = 100
-TALON_FADE_SEEDS = {
-    16, 129, 146, 152, 241, 281, 292, 332, 344, 359, 393, 412,
-    541, 602, 628, 649, 673, 688, 701, 743, 777, 792, 918, 994,
+# Blue Gem picks combine collector guides with inspected playside coverage.
+# https://steamcommunity.com/sharedfiles/filedetails/?id=3090086681
+# https://skinrate.app/patterns/blue-gem
+CASE_HARDENED_KNIVES = {
+    "Bayonet": (555, 592),
+    "Bowie Knife": (182, 398),
+    "Butterfly Knife": (182, 494),
+    "Classic Knife": (403, 585),
+    "Falchion Knife": (494, 694),
+    "Flip Knife": (670, 321),
+    "Gut Knife": (567, 962),
+    "Huntsman Knife": (618, 703),
+    "Karambit": (387, 442),
+    "Kukri Knife": (494, 770),
+    "M9 Bayonet": (601, 417),
+    "Navaja Knife": (398, 838),
+    "Nomad Knife": (577, 456),
+    "Paracord Knife": (403, 583),
+    "Shadow Daggers": (56, 707),
+    "Skeleton Knife": (403, 583),
+    "Stiletto Knife": (182, 494),
+    "Survival Knife": (403, 634),
+    "Talon Knife": (55, 241),
+    "Ursus Knife": (494, 618),
 }
-# https://pricempire.com/guides/karambit-doppler-phase-1-guide
-KARAMBIT_TIER_ONE_SEEDS = {
-    31, 49, 88, 98, 106, 113, 135, 190, 196, 217, 218, 220, 226,
-    253, 262, 296, 311, 354, 384, 387, 409, 445, 530, 540, 547,
-    552, 574, 594, 606, 610, 630, 717, 730, 746, 783, 812, 858,
-    939, 972, 989, 998,
+PATTERN_CATALOG = {
+    **{
+        f"★ {model} | Case Hardened": {seed: "Blue Gem" for seed in seeds}
+        for model, seeds in CASE_HARDENED_KNIVES.items()
+    },
+    # https://skin.gallery/skin/navaja-knife-fade
+    "★ Navaja Knife | Fade": {763: "100% Fade", 575: "99.99% Fade"},
+    # https://steamcommunity.com/sharedfiles/filedetails/?id=3137163506
+    "★ Gut Knife | Marble Fade": {412: "Fire & Ice 1st Max", 602: "Fire & Ice 2nd Max"},
+    # https://steamcommunity.com/sharedfiles/filedetails/?id=2481147886
+    "AK-47 | Case Hardened": {784: "Gold Gem", 219: "Gold Gem"},
+    # https://steamcommunity.com/sharedfiles/filedetails/?id=2873225968
+    "Five-SeveN | Case Hardened": {278: "Blue Gem", 670: "Blue Gem"},
+    # https://cs2pattern-prices.com/weapons/mac-10/case-hardened/blue-gems-1
+    "MAC-10 | Case Hardened": {95: "Blue Gem", 667: "Blue Gem"},
+    # https://pricempire.com/guides/desert-eagle-heat-treated-guide
+    "Desert Eagle | Heat Treated": {490: "Blue Gem", 148: "Blue Gem"},
+    # https://skinrate.app/patterns/five-seven-heat-treated
+    "Five-SeveN | Heat Treated": {904: "Blue Gem", 148: "Blue Gem"},
+    # https://cs2pattern-prices.com/deep-dives/awp-paw-patterns
+    "AWP | PAW": {420: "Stoner Cat", 41: "Golden Cat"},
+    # https://steamcommunity.com/sharedfiles/filedetails/?id=3613249488
+    "AWP | Electric Hive": {253: "Max Orange", 273: "Max Blue"},
+    # https://cs2pattern-prices.com/deep-dives/m4a1-s-solitude-patterns
+    "M4A1-S | Solitude": {12: "Golden Mountain", 379: "Golden Mountain"},
+    # https://steamcommunity.com/sharedfiles/filedetails/?id=3474497759
+    "XM1014 | Solitude": {95: "Golden Sun", 871: "Golden Sun"},
+    # https://cs2pattern-prices.com/weapons/mac-10/snow-splash/max-white-1
+    "MAC-10 | Snow Splash": {828: "Max White", 222: "Max White"},
+    # https://steamcommunity.com/sharedfiles/filedetails/?id=3522993912
+    "Galil AR | Sandstorm": {449: "Max White", 555: "Max White"},
+    # https://steamcommunity.com/sharedfiles/filedetails/?id=2044221485
+    "Five-SeveN | Kami": {909: "Редкий рисунок", 662: "Редкий рисунок"},
+    # https://lis-skins.com/blog/the-ak-47-aphrodite-best-patterns-aphrodite-tier-list/
+    "AK-47 | Aphrodite": {904: "Pink Gem", 948: "Pink Gem"},
+    # https://steamcommunity.com/sharedfiles/filedetails/?id=3353615892
+    "USP-S | Alpine Camo": {674: "Blue Gem", 490: "Blue Gem"},
+    # https://steamcommunity.com/sharedfiles/filedetails/?id=2880283225
+    "Glock-18 | Grinder": {916: "Full Black", 384: "Full Black"},
+    # https://steamcommunity.com/sharedfiles/filedetails/?id=2844559383
+    "Glock-18 | High Beam": {897: "Full Beam"},
+    # https://steamcommunity.com/sharedfiles/filedetails/?id=3656899678
+    "Glock-18 | Trace Lock": {679: "White Gem", 570: "White Gem"},
 }
-KARAMBIT_TIER_FOUR_SEEDS = {
-    0, 1, 3, 24, 28, 42, 44, 45, 59, 62, 71, 72, 96, 116, 132, 138,
-    143, 146, 166, 174, 178, 185, 189, 209, 216, 231, 234, 258, 259, 265,
-    280, 284, 290, 292, 374, 383, 410, 443, 463, 472, 478, 479, 484, 490,
-    498, 502, 506, 510, 522, 529, 531, 532, 534, 580, 595, 603, 605, 616,
-    626, 637, 660, 684, 693, 699, 705, 725, 744, 750, 767, 770, 773, 822,
-    839, 843, 846, 855, 859, 890, 929, 951, 958, 969, 973, 980,
-}
-KARAMBIT_PINK_SEEDS = {129, 281, 602, 673, 908}
+
+WEAR_NAMES = ("Factory New", "Minimal Wear", "Field-Tested", "Well-Worn", "Battle-Scarred")
+
+
+def tracked_market_names():
+    names = {}
+    for base, seeds in PATTERN_CATALOG.items():
+        if base.startswith("★ "):
+            variants = (base, f"★ StatTrak™ {base[2:]}")
+        else:
+            variants = (base, f"StatTrak™ {base}", f"Souvenir {base}")
+        for variant in variants:
+            for wear in WEAR_NAMES:
+                names[f"{variant} ({wear})"] = seeds
+    return names
 
 
 def _listing_fields(listing):
@@ -52,56 +113,6 @@ def _sorted_listings(listings):
         name: sorted(by_id.values(), key=lambda listing: (listing["price"], listing["id"]))
         for name, by_id in listings.items()
     }
-
-
-def fetch_pattern_listings(api_key, names):
-    """Fetch exact LIS-SKINS listings in ascending price and ID order."""
-    listings = {name: {} for name in names}
-    if not listings:
-        return {}
-
-    query = [("game", "csgo"), *(("names[]", name) for name in listings)]
-    cursor_params = []
-    seen_cursors = set()
-
-    while True:
-        request = urllib.request.Request(
-            f"{LIS_SKINS_SEARCH}?{urllib.parse.urlencode(query + cursor_params)}",
-            headers={"Accept": "application/json", "User-Agent": "butterfly-watch/1.0"},
-        )
-        request.add_unredirected_header("Authorization", f"Bearer {api_key}")
-        with urllib.request.urlopen(request, timeout=12) as response:
-            page = json.load(response)
-
-        if not isinstance(page, dict) or not isinstance(page.get("data"), list):
-            raise ValueError("Invalid LIS-SKINS search response")
-        meta = page.get("meta", {})
-        if not isinstance(meta, dict):
-            raise ValueError("Invalid LIS-SKINS search metadata")
-
-        for listing in page["data"]:
-            if not isinstance(listing, dict):
-                raise ValueError("Invalid LIS-SKINS listing")
-            name = listing.get("name")
-            if name not in listings:
-                continue
-
-            listing_id, _, seed = _listing_fields(listing)
-            listings[name][listing_id] = {
-                **listing,
-                "item_paint_seed": seed,
-                "item_float": _listing_wear(listing.get("item_float")),
-            }
-
-        cursor = meta.get("next_cursor")
-        if not cursor:
-            break
-        if cursor in seen_cursors:
-            raise ValueError("Repeated LIS-SKINS search cursor")
-        seen_cursors.add(cursor)
-        cursor_params = [("cursor", cursor)]
-
-    return _sorted_listings(listings)
 
 
 class _TimedExportStream:
@@ -183,20 +194,3 @@ def fetch_export_listings(names, etag=None):
                         "item_float": _listing_wear(listing.get("item_float")),
                     }
         return _sorted_listings(listings), response.headers.get("ETag")
-
-
-def pattern_label(slug, seed):
-    if slug == "talon-knife-fade-fn" and seed in TALON_FADE_SEEDS:
-        return "ЭТАЛОННЫЙ СИД" if seed == 412 else "100% Fade"
-
-    if slug == "karambit-doppler-phase-1-fn":
-        if seed in KARAMBIT_PINK_SEEDS:
-            return "Розовый паттерн"
-        if seed in KARAMBIT_TIER_ONE_SEEDS:
-            return "Fake Black Pearl (Tier 1)"
-        if seed in KARAMBIT_TIER_FOUR_SEEDS:
-            return "Fake Black Pearl (Tier 4)"
-        if seed == 711:
-            return "Fake Black Pearl"
-
-    return None

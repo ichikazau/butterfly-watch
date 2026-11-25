@@ -14,15 +14,12 @@ EXPORT_TRANSFER_TIMEOUT = 100
 CASE_HARDENED_KNIVES = {
     "Bayonet": (555, 592),
     "Bowie Knife": (182, 398),
-    "Butterfly Knife": (182, 494),
     "Classic Knife": (403, 585),
     "Falchion Knife": (494, 694),
     "Flip Knife": (670, 321),
     "Gut Knife": (567, 962),
     "Huntsman Knife": (618, 703),
-    "Karambit": (387, 442),
     "Kukri Knife": (494, 770),
-    "M9 Bayonet": (601, 417),
     "Navaja Knife": (398, 838),
     "Nomad Knife": (577, 456),
     "Paracord Knife": (403, 583),
@@ -30,7 +27,6 @@ CASE_HARDENED_KNIVES = {
     "Skeleton Knife": (403, 583),
     "Stiletto Knife": (182, 494),
     "Survival Knife": (403, 634),
-    "Talon Knife": (55, 241),
     "Ursus Knife": (494, 618),
 }
 PATTERN_CATALOG = {

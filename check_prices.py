@@ -17,7 +17,7 @@ LIS_SKINS_FEED = "https://lis-skins.com/market_export_json/csgo.json"
 CBR_RATE_URL = "https://www.cbr-xml-daily.ru/daily_json.js"
 MAX_HISTORY_POINTS = 8064  # ~4 weeks at 5-minute intervals
 PATTERN_TOP_COUNT = 5
-PATTERN_PREMIUM_RUB = 3000
+PATTERN_MAX_PREMIUM_RATE = Decimal("0.15")
 PATTERN_MAX_KNIFE_PRICE_RUB = 27000
 PATTERN_MAX_GUN_PRICE_RUB = 20000
 PATTERN_ALERT_BATCH_SIZE = 20
@@ -259,14 +259,15 @@ def fetch_pattern_snapshot(previous, now):
 def eligible_pattern_offers(name, group, rub_per_dollar):
     price_limit = PATTERN_MAX_KNIFE_PRICE_RUB if name.startswith("★ ") else PATTERN_MAX_GUN_PRICE_RUB
     floor = Decimal(str(group["floor_price"]))
+    max_premium = floor * PATTERN_MAX_PREMIUM_RATE
     for lot in group["lots"]:
         price = Decimal(str(lot["price"]))
         price_rub = price * rub_per_dollar
-        premium = (price - floor) * rub_per_dollar
+        premium = price - floor
         if price_rub <= price_limit and (
-            lot["rank"] <= PATTERN_TOP_COUNT or premium <= PATTERN_PREMIUM_RUB
+            lot["rank"] <= PATTERN_TOP_COUNT or premium <= max_premium
         ):
-            yield lot, price_rub, premium
+            yield lot, price_rub, premium * rub_per_dollar, premium / floor
 
 
 def notify_pattern_matches(data, snapshot, usd_rate, market):
@@ -281,14 +282,14 @@ def notify_pattern_matches(data, snapshot, usd_rate, market):
         active_ids = {lot["id"] for lot in group["lots"]}
         delivered = active_ids.intersection(previous.get(name, ()))
         pending = []
-        for lot, price_rub, premium in eligible_pattern_offers(name, group, rub_per_dollar):
+        for lot, price_rub, premium_rub, premium_rate in eligible_pattern_offers(name, group, rub_per_dollar):
             if lot["id"] in delivered:
                 continue
 
             line = (
                 f"<b>{escape(lot['label'])} #{lot['item_paint_seed']}</b>"
                 f" · ≈ {price_rub:,.0f} ₽ (${lot['price']:.2f})"
-                f" · #{lot['rank']} по цене · +{premium:,.0f} ₽ к минимуму"
+                f" · #{lot['rank']} по цене · +{premium_rub:,.0f} ₽ ({premium_rate:+.1%}) к минимуму"
                 f" · лот {lot['id']}"
             ).replace(",", " ")
             pending.append((lot["id"], line))

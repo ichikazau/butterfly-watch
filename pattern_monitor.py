@@ -27,6 +27,7 @@ CASE_HARDENED_KNIVES = {
     "Skeleton Knife": (403, 583),
     "Stiletto Knife": (182, 494),
     "Survival Knife": (403, 634),
+    "Talon Knife": (55, 241),
     "Ursus Knife": (494, 618),
 }
 PATTERN_CATALOG = {

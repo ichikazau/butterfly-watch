@@ -18,7 +18,8 @@ CBR_RATE_URL = "https://www.cbr-xml-daily.ru/daily_json.js"
 MAX_HISTORY_POINTS = 8064  # ~4 weeks at 5-minute intervals
 PATTERN_TOP_COUNT = 5
 PATTERN_PREMIUM_RUB = 3000
-PATTERN_MAX_PRICE_RUB = 20000
+PATTERN_MAX_KNIFE_PRICE_RUB = 27000
+PATTERN_MAX_GUN_PRICE_RUB = 20000
 PATTERN_ALERT_BATCH_SIZE = 20
 
 # csmarketcap.com aggregates the same item's price across ~20-30 marketplaces.
@@ -255,13 +256,14 @@ def fetch_pattern_snapshot(previous, now):
     }
 
 
-def eligible_pattern_offers(group, rub_per_dollar):
+def eligible_pattern_offers(name, group, rub_per_dollar):
+    price_limit = PATTERN_MAX_KNIFE_PRICE_RUB if name.startswith("★ ") else PATTERN_MAX_GUN_PRICE_RUB
     floor = Decimal(str(group["floor_price"]))
     for lot in group["lots"]:
         price = Decimal(str(lot["price"]))
         price_rub = price * rub_per_dollar
         premium = (price - floor) * rub_per_dollar
-        if price_rub <= PATTERN_MAX_PRICE_RUB and (
+        if price_rub <= price_limit and (
             lot["rank"] <= PATTERN_TOP_COUNT or premium <= PATTERN_PREMIUM_RUB
         ):
             yield lot, price_rub, premium
@@ -279,7 +281,7 @@ def notify_pattern_matches(data, snapshot, usd_rate, market):
         active_ids = {lot["id"] for lot in group["lots"]}
         delivered = active_ids.intersection(previous.get(name, ()))
         pending = []
-        for lot, price_rub, premium in eligible_pattern_offers(group, rub_per_dollar):
+        for lot, price_rub, premium in eligible_pattern_offers(name, group, rub_per_dollar):
             if lot["id"] in delivered:
                 continue
 
